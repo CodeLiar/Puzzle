@@ -1,0 +1,482 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AE860A911AA018E60057B74B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AE860A901AA018E60057B74B /* main.m */; };
+		AE860A941AA018E60057B74B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AE860A931AA018E60057B74B /* AppDelegate.m */; };
+		AE860A9C1AA018E60057B74B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE860A9B1AA018E60057B74B /* Images.xcassets */; };
+		AE860AAB1AA018E60057B74B /* PuzzleDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AE860AAA1AA018E60057B74B /* PuzzleDemoTests.m */; };
+		AE860AB71AA024C40057B74B /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE860AB61AA024C40057B74B /* RootViewController.m */; };
+		AE860ACF1AA027800057B74B /* LKAsset.m in Sources */ = {isa = PBXBuildFile; fileRef = AE860ABA1AA027800057B74B /* LKAsset.m */; };
+		AE860AD01AA027800057B74B /* LKAssetsCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = AE860ABC1AA027800057B74B /* LKAssetsCollection.m */; };
+		AE860AD11AA027800057B74B /* LKAssetsCollectionEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = AE860ABE1AA027800057B74B /* LKAssetsCollectionEntry.m */; };
+		AE860AD21AA027800057B74B /* LKAssetsCollectionGenericFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = AE860AC11AA027800057B74B /* LKAssetsCollectionGenericFilter.m */; };
+		AE860AD31AA027800057B74B /* LKAssetsCollectionGenericGrouping.m in Sources */ = {isa = PBXBuildFile; fileRef = AE860AC31AA027800057B74B /* LKAssetsCollectionGenericGrouping.m */; };
+		AE860AD41AA027800057B74B /* LKAssetsCollectionGenericSorter.m in Sources */ = {isa = PBXBuildFile; fileRef = AE860AC61AA027800057B74B /* LKAssetsCollectionGenericSorter.m */; };
+		AE860AD51AA027800057B74B /* LKAssetsGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = AE860ACA1AA027800057B74B /* LKAssetsGroup.m */; };
+		AE860AD61AA027800057B74B /* LKAssetsLibrary+GenericCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = AE860ACC1AA027800057B74B /* LKAssetsLibrary+GenericCollection.m */; };
+		AE860AD71AA027800057B74B /* LKAssetsLibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = AE860ACE1AA027800057B74B /* LKAssetsLibrary.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		AE860AA51AA018E60057B74B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AE860A831AA018E60057B74B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AE860A8A1AA018E60057B74B;
+			remoteInfo = PuzzleDemo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		AE860A8B1AA018E60057B74B /* PuzzleDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PuzzleDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AE860A8F1AA018E60057B74B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AE860A901AA018E60057B74B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		AE860A921AA018E60057B74B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		AE860A931AA018E60057B74B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		AE860A9B1AA018E60057B74B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		AE860AA41AA018E60057B74B /* PuzzleDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PuzzleDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AE860AA91AA018E60057B74B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AE860AAA1AA018E60057B74B /* PuzzleDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PuzzleDemoTests.m; sourceTree = "<group>"; };
+		AE860AB41AA022020057B74B /* PuzzleDemo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "PuzzleDemo-Prefix.pch"; path = "../PuzzleDemo-Prefix.pch"; sourceTree = "<group>"; };
+		AE860AB51AA024C40057B74B /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		AE860AB61AA024C40057B74B /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		AE860AB91AA027800057B74B /* LKAsset.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LKAsset.h; sourceTree = "<group>"; };
+		AE860ABA1AA027800057B74B /* LKAsset.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LKAsset.m; sourceTree = "<group>"; };
+		AE860ABB1AA027800057B74B /* LKAssetsCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LKAssetsCollection.h; sourceTree = "<group>"; };
+		AE860ABC1AA027800057B74B /* LKAssetsCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LKAssetsCollection.m; sourceTree = "<group>"; };
+		AE860ABD1AA027800057B74B /* LKAssetsCollectionEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LKAssetsCollectionEntry.h; sourceTree = "<group>"; };
+		AE860ABE1AA027800057B74B /* LKAssetsCollectionEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LKAssetsCollectionEntry.m; sourceTree = "<group>"; };
+		AE860ABF1AA027800057B74B /* LKAssetsCollectionFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LKAssetsCollectionFilter.h; sourceTree = "<group>"; };
+		AE860AC01AA027800057B74B /* LKAssetsCollectionGenericFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LKAssetsCollectionGenericFilter.h; sourceTree = "<group>"; };
+		AE860AC11AA027800057B74B /* LKAssetsCollectionGenericFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LKAssetsCollectionGenericFilter.m; sourceTree = "<group>"; };
+		AE860AC21AA027800057B74B /* LKAssetsCollectionGenericGrouping.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LKAssetsCollectionGenericGrouping.h; sourceTree = "<group>"; };
+		AE860AC31AA027800057B74B /* LKAssetsCollectionGenericGrouping.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LKAssetsCollectionGenericGrouping.m; sourceTree = "<group>"; };
+		AE860AC41AA027800057B74B /* LKAssetsCollectionGenericHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LKAssetsCollectionGenericHelpers.h; sourceTree = "<group>"; };
+		AE860AC51AA027800057B74B /* LKAssetsCollectionGenericSorter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LKAssetsCollectionGenericSorter.h; sourceTree = "<group>"; };
+		AE860AC61AA027800057B74B /* LKAssetsCollectionGenericSorter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LKAssetsCollectionGenericSorter.m; sourceTree = "<group>"; };
+		AE860AC71AA027800057B74B /* LKAssetsCollectionGrouping.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LKAssetsCollectionGrouping.h; sourceTree = "<group>"; };
+		AE860AC81AA027800057B74B /* LKAssetsCollectionSorter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LKAssetsCollectionSorter.h; sourceTree = "<group>"; };
+		AE860AC91AA027800057B74B /* LKAssetsGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LKAssetsGroup.h; sourceTree = "<group>"; };
+		AE860ACA1AA027800057B74B /* LKAssetsGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LKAssetsGroup.m; sourceTree = "<group>"; };
+		AE860ACB1AA027800057B74B /* LKAssetsLibrary+GenericCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LKAssetsLibrary+GenericCollection.h"; sourceTree = "<group>"; };
+		AE860ACC1AA027800057B74B /* LKAssetsLibrary+GenericCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LKAssetsLibrary+GenericCollection.m"; sourceTree = "<group>"; };
+		AE860ACD1AA027800057B74B /* LKAssetsLibrary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LKAssetsLibrary.h; sourceTree = "<group>"; };
+		AE860ACE1AA027800057B74B /* LKAssetsLibrary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LKAssetsLibrary.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AE860A881AA018E60057B74B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AE860AA11AA018E60057B74B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AE860A821AA018E60057B74B = {
+			isa = PBXGroup;
+			children = (
+				AE860AB81AA027800057B74B /* Classes */,
+				AE860A8D1AA018E60057B74B /* PuzzleDemo */,
+				AE860AA71AA018E60057B74B /* PuzzleDemoTests */,
+				AE860A8C1AA018E60057B74B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AE860A8C1AA018E60057B74B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AE860A8B1AA018E60057B74B /* PuzzleDemo.app */,
+				AE860AA41AA018E60057B74B /* PuzzleDemoTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AE860A8D1AA018E60057B74B /* PuzzleDemo */ = {
+			isa = PBXGroup;
+			children = (
+				AE860A921AA018E60057B74B /* AppDelegate.h */,
+				AE860A931AA018E60057B74B /* AppDelegate.m */,
+				AE860AB51AA024C40057B74B /* RootViewController.h */,
+				AE860AB61AA024C40057B74B /* RootViewController.m */,
+				AE860A9B1AA018E60057B74B /* Images.xcassets */,
+				AE860A8E1AA018E60057B74B /* Supporting Files */,
+			);
+			path = PuzzleDemo;
+			sourceTree = "<group>";
+		};
+		AE860A8E1AA018E60057B74B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				AE860A8F1AA018E60057B74B /* Info.plist */,
+				AE860A901AA018E60057B74B /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AE860AA71AA018E60057B74B /* PuzzleDemoTests */ = {
+			isa = PBXGroup;
+			children = (
+				AE860AAA1AA018E60057B74B /* PuzzleDemoTests.m */,
+				AE860AA81AA018E60057B74B /* Supporting Files */,
+			);
+			path = PuzzleDemoTests;
+			sourceTree = "<group>";
+		};
+		AE860AA81AA018E60057B74B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				AE860AA91AA018E60057B74B /* Info.plist */,
+				AE860AB41AA022020057B74B /* PuzzleDemo-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AE860AB81AA027800057B74B /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				AE860AB91AA027800057B74B /* LKAsset.h */,
+				AE860ABA1AA027800057B74B /* LKAsset.m */,
+				AE860ABB1AA027800057B74B /* LKAssetsCollection.h */,
+				AE860ABC1AA027800057B74B /* LKAssetsCollection.m */,
+				AE860ABD1AA027800057B74B /* LKAssetsCollectionEntry.h */,
+				AE860ABE1AA027800057B74B /* LKAssetsCollectionEntry.m */,
+				AE860ABF1AA027800057B74B /* LKAssetsCollectionFilter.h */,
+				AE860AC01AA027800057B74B /* LKAssetsCollectionGenericFilter.h */,
+				AE860AC11AA027800057B74B /* LKAssetsCollectionGenericFilter.m */,
+				AE860AC21AA027800057B74B /* LKAssetsCollectionGenericGrouping.h */,
+				AE860AC31AA027800057B74B /* LKAssetsCollectionGenericGrouping.m */,
+				AE860AC41AA027800057B74B /* LKAssetsCollectionGenericHelpers.h */,
+				AE860AC51AA027800057B74B /* LKAssetsCollectionGenericSorter.h */,
+				AE860AC61AA027800057B74B /* LKAssetsCollectionGenericSorter.m */,
+				AE860AC71AA027800057B74B /* LKAssetsCollectionGrouping.h */,
+				AE860AC81AA027800057B74B /* LKAssetsCollectionSorter.h */,
+				AE860AC91AA027800057B74B /* LKAssetsGroup.h */,
+				AE860ACA1AA027800057B74B /* LKAssetsGroup.m */,
+				AE860ACB1AA027800057B74B /* LKAssetsLibrary+GenericCollection.h */,
+				AE860ACC1AA027800057B74B /* LKAssetsLibrary+GenericCollection.m */,
+				AE860ACD1AA027800057B74B /* LKAssetsLibrary.h */,
+				AE860ACE1AA027800057B74B /* LKAssetsLibrary.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AE860A8A1AA018E60057B74B /* PuzzleDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AE860AAE1AA018E60057B74B /* Build configuration list for PBXNativeTarget "PuzzleDemo" */;
+			buildPhases = (
+				AE860A871AA018E60057B74B /* Sources */,
+				AE860A881AA018E60057B74B /* Frameworks */,
+				AE860A891AA018E60057B74B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PuzzleDemo;
+			productName = PuzzleDemo;
+			productReference = AE860A8B1AA018E60057B74B /* PuzzleDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		AE860AA31AA018E60057B74B /* PuzzleDemoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AE860AB11AA018E60057B74B /* Build configuration list for PBXNativeTarget "PuzzleDemoTests" */;
+			buildPhases = (
+				AE860AA01AA018E60057B74B /* Sources */,
+				AE860AA11AA018E60057B74B /* Frameworks */,
+				AE860AA21AA018E60057B74B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AE860AA61AA018E60057B74B /* PBXTargetDependency */,
+			);
+			name = PuzzleDemoTests;
+			productName = PuzzleDemoTests;
+			productReference = AE860AA41AA018E60057B74B /* PuzzleDemoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AE860A831AA018E60057B74B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = Geass;
+				TargetAttributes = {
+					AE860A8A1AA018E60057B74B = {
+						CreatedOnToolsVersion = 6.1;
+					};
+					AE860AA31AA018E60057B74B = {
+						CreatedOnToolsVersion = 6.1;
+						TestTargetID = AE860A8A1AA018E60057B74B;
+					};
+				};
+			};
+			buildConfigurationList = AE860A861AA018E60057B74B /* Build configuration list for PBXProject "PuzzleDemo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = AE860A821AA018E60057B74B;
+			productRefGroup = AE860A8C1AA018E60057B74B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AE860A8A1AA018E60057B74B /* PuzzleDemo */,
+				AE860AA31AA018E60057B74B /* PuzzleDemoTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AE860A891AA018E60057B74B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AE860A9C1AA018E60057B74B /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AE860AA21AA018E60057B74B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AE860A871AA018E60057B74B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AE860AD11AA027800057B74B /* LKAssetsCollectionEntry.m in Sources */,
+				AE860AD51AA027800057B74B /* LKAssetsGroup.m in Sources */,
+				AE860AD21AA027800057B74B /* LKAssetsCollectionGenericFilter.m in Sources */,
+				AE860A941AA018E60057B74B /* AppDelegate.m in Sources */,
+				AE860A911AA018E60057B74B /* main.m in Sources */,
+				AE860AD31AA027800057B74B /* LKAssetsCollectionGenericGrouping.m in Sources */,
+				AE860AD01AA027800057B74B /* LKAssetsCollection.m in Sources */,
+				AE860AB71AA024C40057B74B /* RootViewController.m in Sources */,
+				AE860AD41AA027800057B74B /* LKAssetsCollectionGenericSorter.m in Sources */,
+				AE860AD61AA027800057B74B /* LKAssetsLibrary+GenericCollection.m in Sources */,
+				AE860ACF1AA027800057B74B /* LKAsset.m in Sources */,
+				AE860AD71AA027800057B74B /* LKAssetsLibrary.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AE860AA01AA018E60057B74B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AE860AAB1AA018E60057B74B /* PuzzleDemoTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		AE860AA61AA018E60057B74B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AE860A8A1AA018E60057B74B /* PuzzleDemo */;
+			targetProxy = AE860AA51AA018E60057B74B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		AE860AAC1AA018E60057B74B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		AE860AAD1AA018E60057B74B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AE860AAF1AA018E60057B74B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/PuzzleDemo-Prefix.pch";
+				INFOPLIST_FILE = PuzzleDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		AE860AB01AA018E60057B74B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/PuzzleDemo-Prefix.pch";
+				INFOPLIST_FILE = PuzzleDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		AE860AB21AA018E60057B74B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = PuzzleDemoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PuzzleDemo.app/PuzzleDemo";
+			};
+			name = Debug;
+		};
+		AE860AB31AA018E60057B74B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = PuzzleDemoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PuzzleDemo.app/PuzzleDemo";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AE860A861AA018E60057B74B /* Build configuration list for PBXProject "PuzzleDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AE860AAC1AA018E60057B74B /* Debug */,
+				AE860AAD1AA018E60057B74B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AE860AAE1AA018E60057B74B /* Build configuration list for PBXNativeTarget "PuzzleDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AE860AAF1AA018E60057B74B /* Debug */,
+				AE860AB01AA018E60057B74B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AE860AB11AA018E60057B74B /* Build configuration list for PBXNativeTarget "PuzzleDemoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AE860AB21AA018E60057B74B /* Debug */,
+				AE860AB31AA018E60057B74B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AE860A831AA018E60057B74B /* Project object */;
+}
