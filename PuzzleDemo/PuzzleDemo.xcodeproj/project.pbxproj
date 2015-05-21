@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AE29F4AC1B0D932B00C9988C /* PuzzleNote218.json in Resources */ = {isa = PBXBuildFile; fileRef = AE29F4A11B0D932B00C9988C /* PuzzleNote218.json */; };
+		AE29F4AD1B0D932B00C9988C /* PuzzleNote218fg1_2.png in Resources */ = {isa = PBXBuildFile; fileRef = AE29F4A21B0D932B00C9988C /* PuzzleNote218fg1_2.png */; };
+		AE29F4AE1B0D932B00C9988C /* PuzzleNote218fg3_4.png in Resources */ = {isa = PBXBuildFile; fileRef = AE29F4A31B0D932B00C9988C /* PuzzleNote218fg3_4.png */; };
+		AE29F4AF1B0D932B00C9988C /* PuzzleNote218MaskFg1.png in Resources */ = {isa = PBXBuildFile; fileRef = AE29F4A41B0D932B00C9988C /* PuzzleNote218MaskFg1.png */; };
+		AE29F4B01B0D932B00C9988C /* PuzzleNote218MaskFg2.png in Resources */ = {isa = PBXBuildFile; fileRef = AE29F4A51B0D932B00C9988C /* PuzzleNote218MaskFg2.png */; };
+		AE29F4B11B0D932B00C9988C /* PuzzleNote218MaskFg3.png in Resources */ = {isa = PBXBuildFile; fileRef = AE29F4A61B0D932B00C9988C /* PuzzleNote218MaskFg3.png */; };
+		AE29F4B21B0D932B00C9988C /* PuzzleNote218MaskFg4.png in Resources */ = {isa = PBXBuildFile; fileRef = AE29F4A71B0D932B00C9988C /* PuzzleNote218MaskFg4.png */; };
+		AE29F4B31B0D932B00C9988C /* PuzzleNote218thumb1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AE29F4A81B0D932B00C9988C /* PuzzleNote218thumb1.jpg */; };
+		AE29F4B41B0D932B00C9988C /* PuzzleNote218thumb2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AE29F4A91B0D932B00C9988C /* PuzzleNote218thumb2.jpg */; };
+		AE29F4B51B0D932B00C9988C /* PuzzleNote218thumb3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AE29F4AA1B0D932B00C9988C /* PuzzleNote218thumb3.jpg */; };
+		AE29F4B61B0D932B00C9988C /* PuzzleNote218thumb4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AE29F4AB1B0D932B00C9988C /* PuzzleNote218thumb4.jpg */; };
 		AE860A911AA018E60057B74B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AE860A901AA018E60057B74B /* main.m */; };
 		AE860A941AA018E60057B74B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AE860A931AA018E60057B74B /* AppDelegate.m */; };
 		AE860A9C1AA018E60057B74B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE860A9B1AA018E60057B74B /* Images.xcassets */; };
@@ -21,6 +32,7 @@
 		AE860AD51AA027800057B74B /* LKAssetsGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = AE860ACA1AA027800057B74B /* LKAssetsGroup.m */; };
 		AE860AD61AA027800057B74B /* LKAssetsLibrary+GenericCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = AE860ACC1AA027800057B74B /* LKAssetsLibrary+GenericCollection.m */; };
 		AE860AD71AA027800057B74B /* LKAssetsLibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = AE860ACE1AA027800057B74B /* LKAssetsLibrary.m */; };
+		AE860ADA1AA04D4A0057B74B /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE860AD91AA04D4A0057B74B /* AssetsLibrary.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +46,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AE29F4A11B0D932B00C9988C /* PuzzleNote218.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = PuzzleNote218.json; sourceTree = "<group>"; };
+		AE29F4A21B0D932B00C9988C /* PuzzleNote218fg1_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PuzzleNote218fg1_2.png; sourceTree = "<group>"; };
+		AE29F4A31B0D932B00C9988C /* PuzzleNote218fg3_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PuzzleNote218fg3_4.png; sourceTree = "<group>"; };
+		AE29F4A41B0D932B00C9988C /* PuzzleNote218MaskFg1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PuzzleNote218MaskFg1.png; sourceTree = "<group>"; };
+		AE29F4A51B0D932B00C9988C /* PuzzleNote218MaskFg2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PuzzleNote218MaskFg2.png; sourceTree = "<group>"; };
+		AE29F4A61B0D932B00C9988C /* PuzzleNote218MaskFg3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PuzzleNote218MaskFg3.png; sourceTree = "<group>"; };
+		AE29F4A71B0D932B00C9988C /* PuzzleNote218MaskFg4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PuzzleNote218MaskFg4.png; sourceTree = "<group>"; };
+		AE29F4A81B0D932B00C9988C /* PuzzleNote218thumb1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = PuzzleNote218thumb1.jpg; sourceTree = "<group>"; };
+		AE29F4A91B0D932B00C9988C /* PuzzleNote218thumb2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = PuzzleNote218thumb2.jpg; sourceTree = "<group>"; };
+		AE29F4AA1B0D932B00C9988C /* PuzzleNote218thumb3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = PuzzleNote218thumb3.jpg; sourceTree = "<group>"; };
+		AE29F4AB1B0D932B00C9988C /* PuzzleNote218thumb4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = PuzzleNote218thumb4.jpg; sourceTree = "<group>"; };
 		AE860A8B1AA018E60057B74B /* PuzzleDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PuzzleDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE860A8F1AA018E60057B74B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AE860A901AA018E60057B74B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -68,6 +91,7 @@
 		AE860ACC1AA027800057B74B /* LKAssetsLibrary+GenericCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LKAssetsLibrary+GenericCollection.m"; sourceTree = "<group>"; };
 		AE860ACD1AA027800057B74B /* LKAssetsLibrary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LKAssetsLibrary.h; sourceTree = "<group>"; };
 		AE860ACE1AA027800057B74B /* LKAssetsLibrary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LKAssetsLibrary.m; sourceTree = "<group>"; };
+		AE860AD91AA04D4A0057B74B /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +99,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE860ADA1AA04D4A0057B74B /* AssetsLibrary.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,12 +113,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AE29F4A01B0D932B00C9988C /* puzzlesrc */ = {
+			isa = PBXGroup;
+			children = (
+				AE29F4A11B0D932B00C9988C /* PuzzleNote218.json */,
+				AE29F4A21B0D932B00C9988C /* PuzzleNote218fg1_2.png */,
+				AE29F4A31B0D932B00C9988C /* PuzzleNote218fg3_4.png */,
+				AE29F4A41B0D932B00C9988C /* PuzzleNote218MaskFg1.png */,
+				AE29F4A51B0D932B00C9988C /* PuzzleNote218MaskFg2.png */,
+				AE29F4A61B0D932B00C9988C /* PuzzleNote218MaskFg3.png */,
+				AE29F4A71B0D932B00C9988C /* PuzzleNote218MaskFg4.png */,
+				AE29F4A81B0D932B00C9988C /* PuzzleNote218thumb1.jpg */,
+				AE29F4A91B0D932B00C9988C /* PuzzleNote218thumb2.jpg */,
+				AE29F4AA1B0D932B00C9988C /* PuzzleNote218thumb3.jpg */,
+				AE29F4AB1B0D932B00C9988C /* PuzzleNote218thumb4.jpg */,
+			);
+			path = puzzlesrc;
+			sourceTree = "<group>";
+		};
 		AE860A821AA018E60057B74B = {
 			isa = PBXGroup;
 			children = (
+				AE29F4A01B0D932B00C9988C /* puzzlesrc */,
 				AE860AB81AA027800057B74B /* Classes */,
 				AE860A8D1AA018E60057B74B /* PuzzleDemo */,
 				AE860AA71AA018E60057B74B /* PuzzleDemoTests */,
+				AE860AD81AA04D300057B74B /* Frameworks */,
 				AE860A8C1AA018E60057B74B /* Products */,
 			);
 			sourceTree = "<group>";
@@ -174,6 +219,14 @@
 				AE860ACE1AA027800057B74B /* LKAssetsLibrary.m */,
 			);
 			path = Classes;
+			sourceTree = "<group>";
+		};
+		AE860AD81AA04D300057B74B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AE860AD91AA04D4A0057B74B /* AssetsLibrary.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,6 +310,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				AE860A9C1AA018E60057B74B /* Images.xcassets in Resources */,
+				AE29F4B61B0D932B00C9988C /* PuzzleNote218thumb4.jpg in Resources */,
+				AE29F4AC1B0D932B00C9988C /* PuzzleNote218.json in Resources */,
+				AE29F4B51B0D932B00C9988C /* PuzzleNote218thumb3.jpg in Resources */,
+				AE29F4AD1B0D932B00C9988C /* PuzzleNote218fg1_2.png in Resources */,
+				AE29F4B21B0D932B00C9988C /* PuzzleNote218MaskFg4.png in Resources */,
+				AE29F4B31B0D932B00C9988C /* PuzzleNote218thumb1.jpg in Resources */,
+				AE29F4B41B0D932B00C9988C /* PuzzleNote218thumb2.jpg in Resources */,
+				AE29F4B11B0D932B00C9988C /* PuzzleNote218MaskFg3.png in Resources */,
+				AE29F4AF1B0D932B00C9988C /* PuzzleNote218MaskFg1.png in Resources */,
+				AE29F4AE1B0D932B00C9988C /* PuzzleNote218fg3_4.png in Resources */,
+				AE29F4B01B0D932B00C9988C /* PuzzleNote218MaskFg2.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

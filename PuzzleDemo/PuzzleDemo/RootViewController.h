@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LKAssetsLibrary.h"
 
 @interface RootViewController : UIViewController
 
