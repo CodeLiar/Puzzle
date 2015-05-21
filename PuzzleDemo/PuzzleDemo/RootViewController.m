@@ -9,11 +9,14 @@
 #import "RootViewController.h"
 #import <AssetsLibrary/AssetsLibrary.h>
 
+#define kUIScreenHeight  [UIScreen mainScreen].bounds.size.height
+#define kUIScreenWidth   [UIScreen mainScreen].bounds.size.width
+
 @interface RootViewController ()
 
 @property (nonatomic, strong) LKAssetsLibrary *assetsLibrary;
-
 @property (nonatomic, strong) ALAssetsLibrary *sysLibrary;
+@property (nonatomic, strong) NSMutableArray *pointArray;
 
 @end
 
@@ -88,7 +91,31 @@
 {
     [super viewDidLoad];
     
+    self.view.backgroundColor = [UIColor blackColor];
     
+    // get point
+    [self getDrawPoints];
+    
+    // Create a cover image
+    [self createCoverImage];
+}
+
+- (void)getDrawPoints
+{
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"PuzzleNote218" ofType:@"json"];
+    NSData *data = [NSData dataWithContentsOfFile:filePath];
+    NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
+    NSDictionary *pointDict = [dict objectForKey:@"point"];
+    self.pointArray = [[pointDict objectForKey:@"4"] mutableCopy];
+}
+
+
+- (void)createCoverImage
+{
+    CGFloat width = kUIScreenWidth - 20.0f;
+    UIImageView *coverImgView = [[UIImageView alloc] initWithFrame:CGRectMake(10, 100, width, width)];
+    coverImgView.image = [UIImage imageNamed:@"PuzzleNote218MaskFg4"];
+    [self.view addSubview:coverImgView];
 }
 
 @end
