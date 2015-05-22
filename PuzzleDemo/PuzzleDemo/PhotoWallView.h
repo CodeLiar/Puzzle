@@ -10,4 +10,11 @@
 
 @interface PhotoWallView : UIView
 
+
+- (instancetype)initWithFrame:(CGRect)frame jsonData:(NSDictionary *)jsonData puzzleCount:(NSInteger)puzzleCount;
+
+// 切换该模板数量
+- (void)changePuzzleCount:(NSInteger)puzzleCount;
+
+
 @end
