@@ -8,6 +8,7 @@
 
 #import "RootViewController.h"
 #import <AssetsLibrary/AssetsLibrary.h>
+#import "PhotoWallView.h"
 
 #define kUIScreenHeight  [UIScreen mainScreen].bounds.size.height
 #define kUIScreenWidth   [UIScreen mainScreen].bounds.size.width
@@ -16,7 +17,8 @@
 
 @property (nonatomic, strong) LKAssetsLibrary *assetsLibrary;
 @property (nonatomic, strong) ALAssetsLibrary *sysLibrary;
-@property (nonatomic, strong) NSMutableArray *pointArray;
+
+@property (nonatomic, strong) PhotoWallView * photoWallView;
 
 @end
 
@@ -93,29 +95,30 @@
     
     self.view.backgroundColor = [UIColor blackColor];
     
-    // get point
-    [self getDrawPoints];
     
-    // Create a cover image
-    [self createCoverImage];
-}
-
-- (void)getDrawPoints
-{
+    
     NSString *filePath = [[NSBundle mainBundle] pathForResource:@"PuzzleNote218" ofType:@"json"];
     NSData *data = [NSData dataWithContentsOfFile:filePath];
     NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
-    NSDictionary *pointDict = [dict objectForKey:@"point"];
-    self.pointArray = [[pointDict objectForKey:@"4"] mutableCopy];
+    
+    CGFloat width = kUIScreenWidth - 20.0f;
+    PhotoWallView *photoWallView = [[PhotoWallView alloc] initWithFrame:CGRectMake(10, 100, width, width) jsonData:dict puzzleCount:3];
+    [self.view addSubview:photoWallView];
+    self.photoWallView = photoWallView;
+    
+    for (int i=0; i<4; i++) {
+        UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake((60+20)*i, 20, 60, 40)];
+        btn.tag = i+1;
+        [btn setTitle:[NSString stringWithFormat:@"切换 %d", i+1] forState:UIControlStateNormal];
+        [self.view addSubview:btn];
+        [btn addTarget:self action:@selector(buttonClick:) forControlEvents:UIControlEventTouchUpInside];
+    }
+    
 }
 
-
-- (void)createCoverImage
+- (void)buttonClick:(UIButton *)btn
 {
-    CGFloat width = kUIScreenWidth - 20.0f;
-    UIImageView *coverImgView = [[UIImageView alloc] initWithFrame:CGRectMake(10, 100, width, width)];
-    coverImgView.image = [UIImage imageNamed:@"PuzzleNote218MaskFg4"];
-    [self.view addSubview:coverImgView];
+    [self.photoWallView changePuzzleCount:btn.tag];
 }
 
 @end

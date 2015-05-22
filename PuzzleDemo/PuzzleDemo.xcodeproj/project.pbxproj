@@ -33,7 +33,8 @@
 		AED3BDD51B0D97CB00BEB013 /* LKAssetsGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = AED3BDCA1B0D97CB00BEB013 /* LKAssetsGroup.m */; };
 		AED3BDD61B0D97CB00BEB013 /* LKAssetsLibrary+GenericCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = AED3BDCC1B0D97CB00BEB013 /* LKAssetsLibrary+GenericCollection.m */; };
 		AED3BDD71B0D97CB00BEB013 /* LKAssetsLibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = AED3BDCE1B0D97CB00BEB013 /* LKAssetsLibrary.m */; };
-		AED3BE0C1B0DB02400BEB013 /* PhotoWallView.m in Sources */ = {isa = PBXBuildFile; fileRef = AED3BE0B1B0DB02400BEB013 /* PhotoWallView.m */; };
+		AED3BE0C1B0DB02400BEB013 /* PhotoWallPhotoView.m in Sources */ = {isa = PBXBuildFile; fileRef = AED3BE0B1B0DB02400BEB013 /* PhotoWallPhotoView.m */; };
+		AED3BE101B0DCFD800BEB013 /* PhotoWallView.m in Sources */ = {isa = PBXBuildFile; fileRef = AED3BE0F1B0DCFD800BEB013 /* PhotoWallView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,8 +94,10 @@
 		AED3BDCC1B0D97CB00BEB013 /* LKAssetsLibrary+GenericCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LKAssetsLibrary+GenericCollection.m"; sourceTree = "<group>"; };
 		AED3BDCD1B0D97CB00BEB013 /* LKAssetsLibrary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LKAssetsLibrary.h; sourceTree = "<group>"; };
 		AED3BDCE1B0D97CB00BEB013 /* LKAssetsLibrary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LKAssetsLibrary.m; sourceTree = "<group>"; };
-		AED3BE0A1B0DB02400BEB013 /* PhotoWallView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoWallView.h; sourceTree = "<group>"; };
-		AED3BE0B1B0DB02400BEB013 /* PhotoWallView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoWallView.m; sourceTree = "<group>"; };
+		AED3BE0A1B0DB02400BEB013 /* PhotoWallPhotoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoWallPhotoView.h; sourceTree = "<group>"; };
+		AED3BE0B1B0DB02400BEB013 /* PhotoWallPhotoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoWallPhotoView.m; sourceTree = "<group>"; };
+		AED3BE0E1B0DCFD800BEB013 /* PhotoWallView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoWallView.h; sourceTree = "<group>"; };
+		AED3BE0F1B0DCFD800BEB013 /* PhotoWallView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoWallView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,8 +165,10 @@
 				AE860A931AA018E60057B74B /* AppDelegate.m */,
 				AE860AB51AA024C40057B74B /* RootViewController.h */,
 				AE860AB61AA024C40057B74B /* RootViewController.m */,
-				AED3BE0A1B0DB02400BEB013 /* PhotoWallView.h */,
-				AED3BE0B1B0DB02400BEB013 /* PhotoWallView.m */,
+				AED3BE0A1B0DB02400BEB013 /* PhotoWallPhotoView.h */,
+				AED3BE0B1B0DB02400BEB013 /* PhotoWallPhotoView.m */,
+				AED3BE0E1B0DCFD800BEB013 /* PhotoWallView.h */,
+				AED3BE0F1B0DCFD800BEB013 /* PhotoWallView.m */,
 				AE860A9B1AA018E60057B74B /* Images.xcassets */,
 				AE860A8E1AA018E60057B74B /* Supporting Files */,
 			);
@@ -356,10 +361,11 @@
 				AED3BDD21B0D97CB00BEB013 /* LKAssetsCollectionGenericFilter.m in Sources */,
 				AE860A941AA018E60057B74B /* AppDelegate.m in Sources */,
 				AE860A911AA018E60057B74B /* main.m in Sources */,
+				AED3BE101B0DCFD800BEB013 /* PhotoWallView.m in Sources */,
 				AED3BDD31B0D97CB00BEB013 /* LKAssetsCollectionGenericGrouping.m in Sources */,
 				AED3BDD01B0D97CB00BEB013 /* LKAssetsCollection.m in Sources */,
 				AE860AB71AA024C40057B74B /* RootViewController.m in Sources */,
-				AED3BE0C1B0DB02400BEB013 /* PhotoWallView.m in Sources */,
+				AED3BE0C1B0DB02400BEB013 /* PhotoWallPhotoView.m in Sources */,
 				AED3BDD41B0D97CB00BEB013 /* LKAssetsCollectionGenericSorter.m in Sources */,
 				AED3BDD61B0D97CB00BEB013 /* LKAssetsLibrary+GenericCollection.m in Sources */,
 				AED3BDCF1B0D97CB00BEB013 /* LKAsset.m in Sources */,
