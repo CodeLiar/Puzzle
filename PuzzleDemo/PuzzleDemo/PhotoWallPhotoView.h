@@ -8,13 +8,24 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol PhotoWallPhotoViewDelegate <NSObject>
+
+- (void)photoItemMoveGesture:(UIPanGestureRecognizer *)panGesture;
+
+@end
+
 @interface PhotoWallPhotoView : UIView
+
+
+@property (nonatomic, strong) NSString *moveImage;                      // 图片
+@property (nonatomic, assign) id<PhotoWallPhotoViewDelegate> delegate;
 
 - (instancetype)initWithPointScales:(NSArray *)pointsScales scaleSize:(CGSize)scaleSize image:(NSString *)image;
 
 // 切换图片
 - (void)phohoItemchangeImage:(NSString *)image;
-// 判断某个点是否在View中
-- (BOOL)isPointInActiveRect:(CGPoint)point;
+
+// 判断点是否在改PhotoItem中
+- (BOOL)isPointInThisPhotoItem:(CGPoint)point;
 
 @end

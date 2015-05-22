@@ -8,6 +8,8 @@
 
 #import "PhotoWallPhotoView.h"
 
+static NSTimeInterval const kUIViewAnimationDuration = 0.1f;
+
 @interface PhotoWallPhotoView ()
 
 @property (nonatomic, strong) NSArray *pointsArray;
@@ -16,7 +18,6 @@
 @property (nonatomic, strong) UIBezierPath *bezierPath;
 
 @property (nonatomic, strong) UIImageView *moveImageView;
-@property (nonatomic, strong) NSString *moveImage;
 
 @property (nonatomic, assign) CGRect moveBeginFrame;
 @property (nonatomic, assign) CGRect originFrame;
@@ -74,6 +75,7 @@
     return path;
 }
 
+// 设置maskShape
 - (void)setMaskShape
 {
     @synchronized(self){
@@ -83,6 +85,14 @@
         self.layer.mask = maskLayer;
         [self setNeedsLayout];
     }
+}
+
+// 重设图片坐标
+- (void)resetImageFrame:(CGRect)frame
+{
+    [UIView animateWithDuration:kUIViewAnimationDuration animations:^{
+        self.moveImageView.frame = frame;
+    }];
 }
 
 // 根据点坐标限定
@@ -131,27 +141,31 @@
 // 判断点击事件
 - (BOOL)pointInside:(CGPoint)point withEvent:(UIEvent *)event
 {
-    return [self isPointInActiveRect:point];
+    return [self isPointInThisPhotoItem:point];
+}
+
+- (BOOL)isPointInThisPhotoItem:(CGPoint)point
+{
+    return  [self.bezierPath containsPoint:point];
 }
 
 // 切换图片
 - (void)phohoItemchangeImage:(NSString *)image
 {
+    self.moveImage = image;
     self.moveImageView.image = [UIImage imageNamed:image];
-    [UIView animateWithDuration:0.25 animations:^{
-        self.moveImageView.frame = self.originFrame;
-    }];
-}
-
-- (BOOL)isPointInActiveRect:(CGPoint)point
-{
-    BOOL containted = [self.bezierPath containsPoint:point];
-    return containted;
+    [self resetImageFrame:self.originFrame];
 }
 
 #pragma makr - GestureMoveMethod
 - (void)imageViewPanMethod:(UIPanGestureRecognizer *)panGesture
 {
+    if ([self.delegate respondsToSelector:@selector(photoItemMoveGesture:)])
+    {
+        [self.delegate photoItemMoveGesture:panGesture];
+    }
+    
+    
     static CGPoint location;
 
     switch (panGesture.state) {
@@ -181,6 +195,7 @@
             
         case UIGestureRecognizerStateEnded:
         {
+            [self resetImageFrame:self.moveBeginFrame];
             NSLog(@"UIGestureRecognizerStateEnded");
         }
 
@@ -188,7 +203,7 @@
             
         case UIGestureRecognizerStateFailed:
         {
-            self.moveImageView.frame = self.moveBeginFrame;
+            [self resetImageFrame:self.moveBeginFrame];
             NSLog(@"UIGestureRecognizerStateFailed");
         }
 
@@ -196,7 +211,7 @@
             
         case UIGestureRecognizerStateCancelled:
         {
-            self.moveImageView.frame = self.moveBeginFrame;
+            [self resetImageFrame:self.moveBeginFrame];
             NSLog(@"UIGestureRecognizerStateCancelled");
         }
             

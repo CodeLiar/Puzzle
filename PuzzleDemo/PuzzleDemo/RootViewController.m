@@ -95,14 +95,12 @@
     
     self.view.backgroundColor = [UIColor blackColor];
     
-    NSLog(@"%s", __FUNCTION__);
-    
     NSString *filePath = [[NSBundle mainBundle] pathForResource:@"PuzzleNote218" ofType:@"json"];
     NSData *data = [NSData dataWithContentsOfFile:filePath];
     NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
     
     CGFloat width = kUIScreenWidth - 20.0f;
-    PhotoWallView *photoWallView = [[PhotoWallView alloc] initWithFrame:CGRectMake(10, 100, width, width) jsonData:dict puzzleCount:3];
+    PhotoWallView *photoWallView = [[PhotoWallView alloc] initWithFrame:CGRectMake(10, 100, width, width) jsonData:dict puzzleCount:2];
     [self.view addSubview:photoWallView];
     self.photoWallView = photoWallView;
     
