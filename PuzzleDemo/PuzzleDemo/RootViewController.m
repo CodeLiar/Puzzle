@@ -95,7 +95,7 @@
     
     self.view.backgroundColor = [UIColor blackColor];
     
-    
+    NSLog(@"%s", __FUNCTION__);
     
     NSString *filePath = [[NSBundle mainBundle] pathForResource:@"PuzzleNote218" ofType:@"json"];
     NSData *data = [NSData dataWithContentsOfFile:filePath];
