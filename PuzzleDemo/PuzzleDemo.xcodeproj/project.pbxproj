@@ -25,6 +25,20 @@
 		AE860AB71AA024C40057B74B /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE860AB61AA024C40057B74B /* RootViewController.m */; };
 		AE860ADA1AA04D4A0057B74B /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE860AD91AA04D4A0057B74B /* AssetsLibrary.framework */; };
 		AEB03E7B1B0F07F7007CDA74 /* Reveal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEB03E7A1B0F07F7007CDA74 /* Reveal.framework */; };
+		AEB03E841B0F1F5E007CDA74 /* PuzzleWall021.json in Resources */ = {isa = PBXBuildFile; fileRef = AEB03E7C1B0F1F5E007CDA74 /* PuzzleWall021.json */; };
+		AEB03E851B0F1F5E007CDA74 /* PuzzleWall021coverThumb.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AEB03E7D1B0F1F5E007CDA74 /* PuzzleWall021coverThumb.jpg */; };
+		AEB03E861B0F1F5E007CDA74 /* PuzzleWall021fg1.png in Resources */ = {isa = PBXBuildFile; fileRef = AEB03E7E1B0F1F5E007CDA74 /* PuzzleWall021fg1.png */; };
+		AEB03E871B0F1F5E007CDA74 /* PuzzleWall021fg2.png in Resources */ = {isa = PBXBuildFile; fileRef = AEB03E7F1B0F1F5E007CDA74 /* PuzzleWall021fg2.png */; };
+		AEB03E881B0F1F5E007CDA74 /* PuzzleWall021fg3.png in Resources */ = {isa = PBXBuildFile; fileRef = AEB03E801B0F1F5E007CDA74 /* PuzzleWall021fg3.png */; };
+		AEB03E891B0F1F5E007CDA74 /* PuzzleWall021thumb1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AEB03E811B0F1F5E007CDA74 /* PuzzleWall021thumb1.jpg */; };
+		AEB03E8A1B0F1F5E007CDA74 /* PuzzleWall021thumb2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AEB03E821B0F1F5E007CDA74 /* PuzzleWall021thumb2.jpg */; };
+		AEB03E8B1B0F1F5E007CDA74 /* PuzzleWall021thumb3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AEB03E831B0F1F5E007CDA74 /* PuzzleWall021thumb3.jpg */; };
+		AEB03E901B0F23BF007CDA74 /* UIColor+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = AEB03E8F1B0F23BF007CDA74 /* UIColor+Category.m */; };
+		AEB03E931B0F2A9A007CDA74 /* PhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AEB03E921B0F2A9A007CDA74 /* PhotoViewController.m */; };
+		AEB03E981B0F3062007CDA74 /* 3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AEB03E941B0F3062007CDA74 /* 3.jpg */; };
+		AEB03E991B0F3062007CDA74 /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AEB03E951B0F3062007CDA74 /* 1.jpg */; };
+		AEB03E9A1B0F3062007CDA74 /* 2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AEB03E961B0F3062007CDA74 /* 2.jpg */; };
+		AEB03E9B1B0F3062007CDA74 /* 4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AEB03E971B0F3062007CDA74 /* 4.jpg */; };
 		AED3BDCF1B0D97CB00BEB013 /* LKAsset.m in Sources */ = {isa = PBXBuildFile; fileRef = AED3BDBA1B0D97CB00BEB013 /* LKAsset.m */; };
 		AED3BDD01B0D97CB00BEB013 /* LKAssetsCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = AED3BDBC1B0D97CB00BEB013 /* LKAssetsCollection.m */; };
 		AED3BDD11B0D97CB00BEB013 /* LKAssetsCollectionEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = AED3BDBE1B0D97CB00BEB013 /* LKAssetsCollectionEntry.m */; };
@@ -69,11 +83,27 @@
 		AE860AA41AA018E60057B74B /* PuzzleDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PuzzleDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE860AA91AA018E60057B74B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AE860AAA1AA018E60057B74B /* PuzzleDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PuzzleDemoTests.m; sourceTree = "<group>"; };
-		AE860AB41AA022020057B74B /* PuzzleDemo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "PuzzleDemo-Prefix.pch"; path = "../PuzzleDemo-Prefix.pch"; sourceTree = "<group>"; };
+		AE860AB41AA022020057B74B /* PuzzleDemo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PuzzleDemo-Prefix.pch"; sourceTree = SOURCE_ROOT; };
 		AE860AB51AA024C40057B74B /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		AE860AB61AA024C40057B74B /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		AE860AD91AA04D4A0057B74B /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		AEB03E7A1B0F07F7007CDA74 /* Reveal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Reveal.framework; sourceTree = "<group>"; };
+		AEB03E7C1B0F1F5E007CDA74 /* PuzzleWall021.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = PuzzleWall021.json; sourceTree = "<group>"; };
+		AEB03E7D1B0F1F5E007CDA74 /* PuzzleWall021coverThumb.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = PuzzleWall021coverThumb.jpg; sourceTree = "<group>"; };
+		AEB03E7E1B0F1F5E007CDA74 /* PuzzleWall021fg1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PuzzleWall021fg1.png; sourceTree = "<group>"; };
+		AEB03E7F1B0F1F5E007CDA74 /* PuzzleWall021fg2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PuzzleWall021fg2.png; sourceTree = "<group>"; };
+		AEB03E801B0F1F5E007CDA74 /* PuzzleWall021fg3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PuzzleWall021fg3.png; sourceTree = "<group>"; };
+		AEB03E811B0F1F5E007CDA74 /* PuzzleWall021thumb1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = PuzzleWall021thumb1.jpg; sourceTree = "<group>"; };
+		AEB03E821B0F1F5E007CDA74 /* PuzzleWall021thumb2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = PuzzleWall021thumb2.jpg; sourceTree = "<group>"; };
+		AEB03E831B0F1F5E007CDA74 /* PuzzleWall021thumb3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = PuzzleWall021thumb3.jpg; sourceTree = "<group>"; };
+		AEB03E8E1B0F23BF007CDA74 /* UIColor+Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Category.h"; sourceTree = "<group>"; };
+		AEB03E8F1B0F23BF007CDA74 /* UIColor+Category.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Category.m"; sourceTree = "<group>"; };
+		AEB03E911B0F2A9A007CDA74 /* PhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoViewController.h; sourceTree = "<group>"; };
+		AEB03E921B0F2A9A007CDA74 /* PhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoViewController.m; sourceTree = "<group>"; };
+		AEB03E941B0F3062007CDA74 /* 3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 3.jpg; sourceTree = "<group>"; };
+		AEB03E951B0F3062007CDA74 /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpg; sourceTree = "<group>"; };
+		AEB03E961B0F3062007CDA74 /* 2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2.jpg; sourceTree = "<group>"; };
+		AEB03E971B0F3062007CDA74 /* 4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 4.jpg; sourceTree = "<group>"; };
 		AED3BDB91B0D97CB00BEB013 /* LKAsset.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LKAsset.h; sourceTree = "<group>"; };
 		AED3BDBA1B0D97CB00BEB013 /* LKAsset.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LKAsset.m; sourceTree = "<group>"; };
 		AED3BDBB1B0D97CB00BEB013 /* LKAssetsCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LKAssetsCollection.h; sourceTree = "<group>"; };
@@ -125,6 +155,18 @@
 		AE29F4A01B0D932B00C9988C /* puzzlesrc */ = {
 			isa = PBXGroup;
 			children = (
+				AEB03E941B0F3062007CDA74 /* 3.jpg */,
+				AEB03E951B0F3062007CDA74 /* 1.jpg */,
+				AEB03E961B0F3062007CDA74 /* 2.jpg */,
+				AEB03E971B0F3062007CDA74 /* 4.jpg */,
+				AEB03E7C1B0F1F5E007CDA74 /* PuzzleWall021.json */,
+				AEB03E7D1B0F1F5E007CDA74 /* PuzzleWall021coverThumb.jpg */,
+				AEB03E7E1B0F1F5E007CDA74 /* PuzzleWall021fg1.png */,
+				AEB03E7F1B0F1F5E007CDA74 /* PuzzleWall021fg2.png */,
+				AEB03E801B0F1F5E007CDA74 /* PuzzleWall021fg3.png */,
+				AEB03E811B0F1F5E007CDA74 /* PuzzleWall021thumb1.jpg */,
+				AEB03E821B0F1F5E007CDA74 /* PuzzleWall021thumb2.jpg */,
+				AEB03E831B0F1F5E007CDA74 /* PuzzleWall021thumb3.jpg */,
 				AE29F4A11B0D932B00C9988C /* PuzzleNote218.json */,
 				AE29F4A21B0D932B00C9988C /* PuzzleNote218fg1_2.png */,
 				AE29F4A31B0D932B00C9988C /* PuzzleNote218fg3_4.png */,
@@ -145,6 +187,7 @@
 			children = (
 				AEB03E7A1B0F07F7007CDA74 /* Reveal.framework */,
 				AED3BDB71B0D97CB00BEB013 /* Class */,
+				AEB03E8D1B0F23BF007CDA74 /* Category */,
 				AE29F4A01B0D932B00C9988C /* puzzlesrc */,
 				AE860A8D1AA018E60057B74B /* PuzzleDemo */,
 				AE860AA71AA018E60057B74B /* PuzzleDemoTests */,
@@ -169,6 +212,8 @@
 				AE860A931AA018E60057B74B /* AppDelegate.m */,
 				AE860AB51AA024C40057B74B /* RootViewController.h */,
 				AE860AB61AA024C40057B74B /* RootViewController.m */,
+				AEB03E911B0F2A9A007CDA74 /* PhotoViewController.h */,
+				AEB03E921B0F2A9A007CDA74 /* PhotoViewController.m */,
 				AED3BE0A1B0DB02400BEB013 /* PhotoWallPhotoView.h */,
 				AED3BE0B1B0DB02400BEB013 /* PhotoWallPhotoView.m */,
 				AED3BE0E1B0DCFD800BEB013 /* PhotoWallView.h */,
@@ -184,6 +229,7 @@
 			children = (
 				AE860A8F1AA018E60057B74B /* Info.plist */,
 				AE860A901AA018E60057B74B /* main.m */,
+				AE860AB41AA022020057B74B /* PuzzleDemo-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -201,7 +247,6 @@
 			isa = PBXGroup;
 			children = (
 				AE860AA91AA018E60057B74B /* Info.plist */,
-				AE860AB41AA022020057B74B /* PuzzleDemo-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -212,6 +257,15 @@
 				AE860AD91AA04D4A0057B74B /* AssetsLibrary.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AEB03E8D1B0F23BF007CDA74 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				AEB03E8E1B0F23BF007CDA74 /* UIColor+Category.h */,
+				AEB03E8F1B0F23BF007CDA74 /* UIColor+Category.m */,
+			);
+			path = Category;
 			sourceTree = "<group>";
 		};
 		AED3BDB71B0D97CB00BEB013 /* Class */ = {
@@ -331,17 +385,29 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AEB03E9B1B0F3062007CDA74 /* 4.jpg in Resources */,
 				AE860A9C1AA018E60057B74B /* Images.xcassets in Resources */,
 				AE29F4B61B0D932B00C9988C /* PuzzleNote218thumb4.jpg in Resources */,
 				AE29F4AC1B0D932B00C9988C /* PuzzleNote218.json in Resources */,
+				AEB03E8A1B0F1F5E007CDA74 /* PuzzleWall021thumb2.jpg in Resources */,
+				AEB03E871B0F1F5E007CDA74 /* PuzzleWall021fg2.png in Resources */,
+				AEB03E841B0F1F5E007CDA74 /* PuzzleWall021.json in Resources */,
+				AEB03E861B0F1F5E007CDA74 /* PuzzleWall021fg1.png in Resources */,
+				AEB03E891B0F1F5E007CDA74 /* PuzzleWall021thumb1.jpg in Resources */,
 				AE29F4B51B0D932B00C9988C /* PuzzleNote218thumb3.jpg in Resources */,
 				AE29F4AD1B0D932B00C9988C /* PuzzleNote218fg1_2.png in Resources */,
+				AEB03E8B1B0F1F5E007CDA74 /* PuzzleWall021thumb3.jpg in Resources */,
+				AEB03E991B0F3062007CDA74 /* 1.jpg in Resources */,
 				AE29F4B21B0D932B00C9988C /* PuzzleNote218MaskFg4.png in Resources */,
+				AEB03E981B0F3062007CDA74 /* 3.jpg in Resources */,
 				AE29F4B31B0D932B00C9988C /* PuzzleNote218thumb1.jpg in Resources */,
 				AE29F4B41B0D932B00C9988C /* PuzzleNote218thumb2.jpg in Resources */,
 				AE29F4B11B0D932B00C9988C /* PuzzleNote218MaskFg3.png in Resources */,
 				AE29F4AF1B0D932B00C9988C /* PuzzleNote218MaskFg1.png in Resources */,
+				AEB03E881B0F1F5E007CDA74 /* PuzzleWall021fg3.png in Resources */,
 				AE29F4AE1B0D932B00C9988C /* PuzzleNote218fg3_4.png in Resources */,
+				AEB03E851B0F1F5E007CDA74 /* PuzzleWall021coverThumb.jpg in Resources */,
+				AEB03E9A1B0F3062007CDA74 /* 2.jpg in Resources */,
 				AE29F4B01B0D932B00C9988C /* PuzzleNote218MaskFg2.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -369,11 +435,13 @@
 				AED3BDD31B0D97CB00BEB013 /* LKAssetsCollectionGenericGrouping.m in Sources */,
 				AED3BDD01B0D97CB00BEB013 /* LKAssetsCollection.m in Sources */,
 				AE860AB71AA024C40057B74B /* RootViewController.m in Sources */,
+				AEB03E931B0F2A9A007CDA74 /* PhotoViewController.m in Sources */,
 				AED3BE0C1B0DB02400BEB013 /* PhotoWallPhotoView.m in Sources */,
 				AED3BDD41B0D97CB00BEB013 /* LKAssetsCollectionGenericSorter.m in Sources */,
 				AED3BDD61B0D97CB00BEB013 /* LKAssetsLibrary+GenericCollection.m in Sources */,
 				AED3BDCF1B0D97CB00BEB013 /* LKAsset.m in Sources */,
 				AED3BDD71B0D97CB00BEB013 /* LKAssetsLibrary.m in Sources */,
+				AEB03E901B0F23BF007CDA74 /* UIColor+Category.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

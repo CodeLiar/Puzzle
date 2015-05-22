@@ -8,6 +8,7 @@
 
 #import "PhotoWallView.h"
 #import "PhotoWallPhotoView.h"
+#import "UIColor+Category.h"
 
 @interface PhotoWallView ()<PhotoWallPhotoViewDelegate>
 
@@ -15,12 +16,14 @@
 @property (nonatomic, strong) NSArray *pointScalesArray;
 @property (nonatomic, assign) NSInteger puzzleCount;                // 拼图数量
 @property (nonatomic, strong) NSString *puzzleIndex;                // 根据拼图数量选择对应数量的模板
-@property (nonatomic, strong) NSString *coverImage;
+@property (nonatomic, strong) NSString *coverImage;                 // 覆盖图片
+@property (nonatomic, strong) NSString *backgroundImage;            // 背景图片
 
 @property (nonatomic, strong) PhotoWallPhotoView *currentPhotoItem; // 当前选中的PhotoItem
 @property (nonatomic, strong) PhotoWallPhotoView *changePhotoItem;  // 要交换的PhotoItem
 // TODO: 删除
-@property (nonatomic, strong) NSArray *demoImageArray;
+@property (nonatomic, strong) NSDictionary *thumbsImageDict;
+@property (nonatomic, strong) NSArray *demoImgArray;
 
 @end
 
@@ -31,9 +34,7 @@
     self = [super initWithFrame:frame];
     if (self)
     {
-        
-        self.demoImageArray = @[@"PuzzleNote218thumb1.jpg", @"PuzzleNote218thumb2.jpg", @"PuzzleNote218thumb3.jpg", @"PuzzleNote218thumb4.jpg"];
-
+        self.demoImgArray = @[@"1.jpg", @"2.jpg", @"3.jpg", @"4.jpg"];
         self.puzzleCount = puzzleCount;
         self.jsonData = jsonData;
         [self setupView];
@@ -55,7 +56,11 @@
 {
     self.puzzleIndex = [NSString stringWithFormat:@"%@", @(self.puzzleCount)];
     [self analyseJsonData];
+    
+    [self createBackgroundImageView];
+    
     [self createAllPhotoItem];
+    
     [self createCoverImageView];
 }
 
@@ -71,6 +76,16 @@
 
 - (void)analyseJsonData
 {
+    // background color
+    NSString *colorString = [self.jsonData objectForKey:@"bgcolor"];
+    self.backgroundColor = [UIColor colorWithHexString:colorString];
+    // background image
+    self.backgroundImage = [[self.jsonData objectForKey:@"fgpic"] objectForKey:self.puzzleIndex];
+    
+    // thumbImage
+    self.thumbsImageDict = [self.jsonData objectForKey:@"thumbs"];
+
+    
     // point
     NSDictionary *points = [self.jsonData objectForKey:@"point"];
     self.pointScalesArray = [points objectForKey:self.puzzleIndex];
@@ -85,18 +100,33 @@
     {
         NSString *pointString = self.pointScalesArray[i];
         NSArray *pointScales = [pointString componentsSeparatedByString:@","];
-        PhotoWallPhotoView *photoItem = [[PhotoWallPhotoView alloc] initWithPointScales:pointScales scaleSize:self.frame.size image:self.demoImageArray[i]];
+        PhotoWallPhotoView *photoItem = [[PhotoWallPhotoView alloc] initWithPointScales:pointScales scaleSize:self.frame.size image:self.demoImgArray[i]];
         photoItem.delegate = self;
-        photoItem.backgroundColor = [UIColor redColor];
         [self addSubview:photoItem];
+    }
+}
+
+- (void)createBackgroundImageView
+{
+    if (self.backgroundImage)
+    {
+        [self createImageViewWithImage:self.backgroundImage];
     }
 }
 
 - (void)createCoverImageView
 {
+    if (self.coverImage)
+    {
+        [self createImageViewWithImage:self.coverImage];
+    }
+}
+
+- (void)createImageViewWithImage:(NSString *)image
+{
     UIImageView *imageView = [[UIImageView alloc] initWithFrame:self.bounds];
     [self addSubview:imageView];
-    imageView.image = [UIImage imageNamed:self.coverImage];
+    imageView.image = [UIImage imageNamed:image];
 }
 
 // 根据触摸点获取PhotoItem

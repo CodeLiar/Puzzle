@@ -8,17 +8,13 @@
 
 #import "RootViewController.h"
 #import <AssetsLibrary/AssetsLibrary.h>
-#import "PhotoWallView.h"
-
-#define kUIScreenHeight  [UIScreen mainScreen].bounds.size.height
-#define kUIScreenWidth   [UIScreen mainScreen].bounds.size.width
+#import "PhotoViewController.h"
 
 @interface RootViewController ()
 
 @property (nonatomic, strong) LKAssetsLibrary *assetsLibrary;
 @property (nonatomic, strong) ALAssetsLibrary *sysLibrary;
 
-@property (nonatomic, strong) PhotoWallView * photoWallView;
 
 @end
 
@@ -92,31 +88,23 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
     self.view.backgroundColor = [UIColor blackColor];
-    
-    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"PuzzleNote218" ofType:@"json"];
-    NSData *data = [NSData dataWithContentsOfFile:filePath];
-    NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
-    
-    CGFloat width = kUIScreenWidth - 20.0f;
-    PhotoWallView *photoWallView = [[PhotoWallView alloc] initWithFrame:CGRectMake(10, 100, width, width) jsonData:dict puzzleCount:2];
-    [self.view addSubview:photoWallView];
-    self.photoWallView = photoWallView;
-    
-    for (int i=0; i<4; i++) {
-        UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake((60+20)*i, 20, 60, 40)];
-        btn.tag = i+1;
-        [btn setTitle:[NSString stringWithFormat:@"切换 %d", i+1] forState:UIControlStateNormal];
+    for (int i=0; i<2; i++) {
+        UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(100, (50+100)*i + 100, 100, 100)];
+        [btn addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
+        btn.tag = i + 3;
+        [btn setTitle:[NSString stringWithFormat:@"第%d种场景", i+1] forState:UIControlStateNormal];
         [self.view addSubview:btn];
-        [btn addTarget:self action:@selector(buttonClick:) forControlEvents:UIControlEventTouchUpInside];
     }
     
 }
 
-- (void)buttonClick:(UIButton *)btn
+- (void)btnClick:(UIButton *)sender
 {
-    [self.photoWallView changePuzzleCount:btn.tag];
+    PhotoViewController *vc = [[PhotoViewController alloc] initWithSourceFile:nil count:sender.tag];
+    [self.navigationController pushViewController:vc animated:YES];
 }
+
+
 
 @end
