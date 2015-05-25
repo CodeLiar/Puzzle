@@ -38,7 +38,6 @@
     [super viewDidLoad];
     
     self.view.backgroundColor = [UIColor blackColor];
-    
     NSString *filePath;
     if (self.sceneCount == 3)
     {

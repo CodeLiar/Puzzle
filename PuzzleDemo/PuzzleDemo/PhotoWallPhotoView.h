@@ -11,6 +11,7 @@
 @protocol PhotoWallPhotoViewDelegate <NSObject>
 
 - (void)photoItemMoveGesture:(UIPanGestureRecognizer *)panGesture;
+- (void)photoItemTapGesture:(UITapGestureRecognizer *)tipGesture;
 
 @end
 
@@ -19,6 +20,7 @@
 
 @property (nonatomic, strong) NSString *moveImage;                      // 图片
 @property (nonatomic, assign) id<PhotoWallPhotoViewDelegate> delegate;
+@property (nonatomic, assign) BOOL isSelected;
 
 - (instancetype)initWithPointScales:(NSArray *)pointsScales scaleSize:(CGSize)scaleSize image:(NSString *)image;
 

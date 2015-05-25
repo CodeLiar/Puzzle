@@ -22,7 +22,7 @@ typedef NS_ENUM(NSUInteger, PhotoViewImageOrientation) {
 @property (nonatomic, assign) CGFloat scaleWidth;
 @property (nonatomic, strong) UIBezierPath *bezierPath;
 
-@property (nonatomic, strong) UIImageView *moveImageView;
+@property (nonatomic, strong) UIImageView *moveImageView;           // 移动的图片
 
 @property (nonatomic, assign) CGRect moveBeginFrame;
 @property (nonatomic, assign) CGRect originFrame;
@@ -47,6 +47,12 @@ typedef NS_ENUM(NSUInteger, PhotoViewImageOrientation) {
     {
         UIPanGestureRecognizer *panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(imageViewPanMethod:)];
         [self addGestureRecognizer:panGesture];
+        
+        UIPinchGestureRecognizer *pinchGesture = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(imageViewPinchMethod:)];
+        [self addGestureRecognizer:pinchGesture];
+        
+        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(imageViewTapMethod:)];
+        [self addGestureRecognizer:tap];
         
         self.bezierPath = [self getBezierPath];
         [self setMaskShape];
@@ -161,6 +167,7 @@ typedef NS_ENUM(NSUInteger, PhotoViewImageOrientation) {
 - (void)phohoItemChangeImage:(NSString *)image
 {
     self.moveImage = image;
+    self.moveImageView.transform = CGAffineTransformMake(1, 0, 0, 1, 0, 0);
     self.originFrame = [self getOriginFrameWithImage:image];
     self.moveBeginFrame = [self getOriginFrameWithImage:image];
     self.moveImageView.image = [UIImage imageNamed:image];
@@ -176,62 +183,63 @@ typedef NS_ENUM(NSUInteger, PhotoViewImageOrientation) {
     
     CGFloat wScale = self.bounds.size.width / width;
     CGFloat hScale = self.bounds.size.height / height;
-    
+    CGFloat scale = 0;
     if (wScale >= hScale)
     {
         self.imageOrientation = PhotoViewImageOrientationPortrait;
-        self.imageScale = wScale;
+        scale = wScale;
     }
     else
     {
         self.imageOrientation = PhotoViewImageOrientationLandscape;
-        self.imageScale = hScale;
+        scale = hScale;
     }
     
-    return CGRectMake(0, 0, width * self.imageScale, height * self.imageScale);
+    return CGRectMake(0, 0, width * scale, height * scale);
 }
 
 // 限制图片的frame，不能有图片空白
 - (CGRect)restrictTheMoveImageFrame
 {
     CGRect frame = self.moveImageView.frame;
-    switch (self.imageOrientation)
+    
+    if (-(frame.origin.x + frame.size.width < self.bounds.size.width))
     {
-        case PhotoViewImageOrientationLandscape:
-            frame.origin.y = self.originFrame.origin.y;
-            if (-(frame.origin.x + frame.size.width < self.bounds.size.width))
-            {
-                frame.origin.x = -(self.originFrame.size.width - self.bounds.size.width);
-            }
-            else if (frame.origin.x > 0)
-            {
-                frame.origin.x = 0;
-            }
-            
-            break;
-            
-        case PhotoViewImageOrientationPortrait:
-            frame.origin.x = self.originFrame.origin.x;
-            if (frame.origin.y + frame.size.height < self.bounds.size.height)
-            {
-                frame.origin.y = -(self.originFrame.size.height - self.bounds.size.height);
-            }
-            else if (frame.origin.y > 0)
-            {
-                frame.origin.y = 0;
-            }
-            
-            break;
-            
-        default:
-            frame = self.originFrame;
-            break;
+        frame.origin.x = -(self.moveImageView.frame.size.width - self.bounds.size.width);
+    }
+    else if (frame.origin.x > 0)
+    {
+        frame.origin.x = 0;
+    }
+
+    if (frame.origin.y + frame.size.height < self.bounds.size.height)
+    {
+        frame.origin.y = -(self.moveImageView.frame.size.height - self.bounds.size.height);
+    }
+    else if (frame.origin.y > 0)
+    {
+        frame.origin.y = 0;
     }
     
     return frame;
 }
 
+// 转换图片的scale
+- (void)changeImageViewScale:(CGFloat)scale
+{
+    CGAffineTransform transform = CGAffineTransformScale(self.moveImageView.transform, scale, scale);
+    if (transform.a < 1)
+    {
+        transform = CGAffineTransformMake(1, 0, 0, 1, 0, 0);
+    }
+    if (transform.a > 3)
+    {
+        transform = CGAffineTransformMake(3, 0, 0, 3, 0, 0);
+    }
+    self.moveImageView.transform = transform;
+}
 #pragma makr - GestureMoveMethod
+
 - (void)imageViewPanMethod:(UIPanGestureRecognizer *)panGesture
 {
     if ([self.delegate respondsToSelector:@selector(photoItemMoveGesture:)])
@@ -304,5 +312,70 @@ typedef NS_ENUM(NSUInteger, PhotoViewImageOrientation) {
             break;
     }
 }
+
+- (void)imageViewPinchMethod:(UIPinchGestureRecognizer *)pinchGesture
+{
+    static CGFloat lastScale = 1.0f;
+    
+    switch (pinchGesture.state) {
+        case UIGestureRecognizerStateBegan:
+        {
+            NSLog(@"UIGestureRecognizerStateBegan");
+            lastScale = 1.0f;
+        }
+            break;
+            
+        case UIGestureRecognizerStateChanged:
+        {
+            NSLog(@"UIGestureRecognizerStateChanged");
+            CGFloat scale = pinchGesture.scale / lastScale;
+            NSLog(@"%f", scale);
+            [self changeImageViewScale:scale];
+        }
+            break;
+            
+        case UIGestureRecognizerStateEnded:
+        {
+            NSLog(@"UIGestureRecognizerStateEnded");
+            [self resetImageFrame:[self restrictTheMoveImageFrame]];
+        }
+            
+            break;
+            
+        case UIGestureRecognizerStateFailed:
+        {
+            NSLog(@"UIGestureRecognizerStateFailed");
+        }
+            
+            break;
+            
+        case UIGestureRecognizerStateCancelled:
+        {
+            NSLog(@"UIGestureRecognizerStateCancelled");
+        }
+            
+            break;
+            
+        case UIGestureRecognizerStatePossible:
+        {
+            NSLog(@"UIGestureRecognizerStatePossible");
+        }
+            
+            break;
+            
+        default:
+            break;
+    }
+    lastScale = [pinchGesture scale];
+}
+
+- (void)imageViewTapMethod:(UITapGestureRecognizer *)tapGesture
+{
+    if ([self.delegate respondsToSelector:@selector(photoItemTapGesture:)])
+    {
+        [self.delegate photoItemTapGesture:tapGesture];
+    }
+}
+
 
 @end

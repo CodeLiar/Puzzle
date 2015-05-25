@@ -21,6 +21,8 @@
 
 @property (nonatomic, strong) PhotoWallPhotoView *currentPhotoItem; // 当前选中的PhotoItem
 @property (nonatomic, strong) PhotoWallPhotoView *changePhotoItem;  // 要交换的PhotoItem
+
+@property (nonatomic, strong) UIView *menuItemView;
 // TODO: 删除
 @property (nonatomic, strong) NSDictionary *thumbsImageDict;
 @property (nonatomic, strong) NSArray *demoImgArray;
@@ -62,6 +64,8 @@
     [self createAllPhotoItem];
     
     [self createCoverImageView];
+    
+    [self createMenuItemView];
 }
 
 - (void)resetView
@@ -122,6 +126,30 @@
     }
 }
 
+
+- (void)createMenuItemView
+{
+    self.menuItemView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 200, 40)];
+    self.menuItemView.backgroundColor = [UIColor blackColor];
+    [self addSubview:self.menuItemView];
+    self.menuItemView.hidden = YES;
+    NSArray *titleArr = @[@"相册", @"旋转", @"放大", @"缩小"];
+    
+    for (int i=0; i<4; i++)
+    {
+        UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake((40+10)*i, 0, 40, 40)];
+        [self.menuItemView addSubview:btn];
+        [btn setTitle:titleArr[i] forState:UIControlStateNormal];
+        [btn addTarget:self action:@selector(menuItemClick:) forControlEvents:UIControlEventTouchUpInside];
+    }
+}
+
+- (void)menuItemClick:(UIButton *)menuItem
+{
+    
+}
+
+
 - (void)createImageViewWithImage:(NSString *)image
 {
     UIImageView *imageView = [[UIImageView alloc] initWithFrame:self.bounds];
@@ -130,7 +158,7 @@
 }
 
 // 根据触摸点获取PhotoItem
-- (PhotoWallPhotoView *)getPhotoItemWithGesture:(UIPanGestureRecognizer *)panGesture
+- (PhotoWallPhotoView *)getPhotoItemWithGesture:(UIGestureRecognizer *)panGesture
 {
     for (UIView *subView in self.subviews) {
         if ([subView isKindOfClass:[PhotoWallPhotoView class]])
@@ -140,9 +168,13 @@
             
             if ([photoItem isPointInThisPhotoItem:location])
             {
-                if ([photoItem isEqual:self.currentPhotoItem] || [photoItem isEqual:self.changePhotoItem])
+                if ([photoItem isEqual:self.currentPhotoItem])
                 {
-                    return nil;
+                    return self.currentPhotoItem;
+                }
+                else if ([photoItem isEqual:self.changePhotoItem])
+                {
+                    return self.changePhotoItem;
                 }
                 else
                 {
@@ -150,8 +182,6 @@
                 }
                 break;
             }
-
-            NSLog(@"%d", [photoItem isPointInThisPhotoItem:location]);
         }
     }
     return nil;
@@ -160,7 +190,7 @@
 // 交换Photo
 - (void)exchangePhotoItem
 {
-    if (self.currentPhotoItem && self.changePhotoItem)
+    if (self.currentPhotoItem && self.changePhotoItem && ![self.currentPhotoItem isEqual:self.changePhotoItem])
     {
         NSString *currentImg = [self.currentPhotoItem.moveImage mutableCopy];
         [self.currentPhotoItem phohoItemChangeImage:self.changePhotoItem.moveImage];
@@ -178,6 +208,8 @@
     switch (panGesture.state) {
         case UIGestureRecognizerStateBegan:
         {
+            self.currentPhotoItem = nil;
+            self.changePhotoItem = nil;
             if ([self getPhotoItemWithGesture:panGesture])
             {
                 self.currentPhotoItem = [self getPhotoItemWithGesture:panGesture];
@@ -201,8 +233,6 @@
         case UIGestureRecognizerStateEnded:
         {
             [self exchangePhotoItem];
-            self.currentPhotoItem = nil;
-            self.changePhotoItem = nil;
             NSLog(@"UIGestureRecognizerStateEnded");
         }
             
@@ -210,8 +240,6 @@
             
         case UIGestureRecognizerStateFailed:
         {
-            self.currentPhotoItem = nil;
-            self.changePhotoItem = nil;
             NSLog(@"UIGestureRecognizerStateFailed");
         }
             
@@ -219,8 +247,7 @@
             
         case UIGestureRecognizerStateCancelled:
         {
-            self.currentPhotoItem = nil;
-            self.changePhotoItem = nil;
+            
             NSLog(@"UIGestureRecognizerStateCancelled");
         }
             
@@ -236,6 +263,26 @@
         default:
             break;
     }
+}
+
+
+- (void)photoItemTapGesture:(UITapGestureRecognizer *)tipGesture
+{
+    self.currentPhotoItem = nil;
+    self.currentPhotoItem = [self getPhotoItemWithGesture:tipGesture];
+    
+    self.menuItemView.hidden = NO;
+    
+    CGRect frame = self.menuItemView.frame;
+    frame.origin.y = self.currentPhotoItem.frame.size.height + self.currentPhotoItem.frame.origin.y;
+    frame.origin.x = self.currentPhotoItem.frame.origin.x;
+    self.menuItemView.frame = frame;
+}
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    self.menuItemView.hidden = YES;
+    NSLog(@"-----");
 }
 
 
