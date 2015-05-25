@@ -10,6 +10,11 @@
 
 static NSTimeInterval const kUIViewAnimationDuration = 0.1f;
 
+typedef NS_ENUM(NSUInteger, PhotoViewImageOrientation) {
+    PhotoViewImageOrientationPortrait,
+    PhotoViewImageOrientationLandscape
+};
+
 @interface PhotoWallPhotoView ()
 
 @property (nonatomic, strong) NSArray *pointsArray;
@@ -21,6 +26,9 @@ static NSTimeInterval const kUIViewAnimationDuration = 0.1f;
 
 @property (nonatomic, assign) CGRect moveBeginFrame;
 @property (nonatomic, assign) CGRect originFrame;
+
+@property (nonatomic, assign) CGFloat imageScale;               // 图片存放比例
+@property (nonatomic, assign) PhotoViewImageOrientation imageOrientation;
 
 @end
 
@@ -50,7 +58,7 @@ static NSTimeInterval const kUIViewAnimationDuration = 0.1f;
 // 创建ImageView
 - (void)createMoveImageView
 {
-    self.moveImageView = [[UIImageView alloc] initWithFrame:self.bounds];
+    self.moveImageView = [[UIImageView alloc] initWithFrame:[self getOriginFrameWithImage:self.moveImage]];
     self.originFrame = self.moveImageView.frame;
     self.moveImageView.image = [UIImage imageNamed:self.moveImage];
     self.moveImageView.userInteractionEnabled = YES;
@@ -150,11 +158,77 @@ static NSTimeInterval const kUIViewAnimationDuration = 0.1f;
 }
 
 // 切换图片
-- (void)phohoItemchangeImage:(NSString *)image
+- (void)phohoItemChangeImage:(NSString *)image
 {
     self.moveImage = image;
+    self.originFrame = [self getOriginFrameWithImage:image];
+    self.moveBeginFrame = [self getOriginFrameWithImage:image];
     self.moveImageView.image = [UIImage imageNamed:image];
     [self resetImageFrame:self.originFrame];
+}
+
+// 根据图片设置imageView的frame的size
+- (CGRect)getOriginFrameWithImage:(NSString *)imageName
+{
+    UIImage *image = [UIImage imageNamed:imageName];
+    CGFloat width = image.size.width;
+    CGFloat height = image.size.height;
+    
+    CGFloat wScale = self.bounds.size.width / width;
+    CGFloat hScale = self.bounds.size.height / height;
+    
+    if (wScale >= hScale)
+    {
+        self.imageOrientation = PhotoViewImageOrientationPortrait;
+        self.imageScale = wScale;
+    }
+    else
+    {
+        self.imageOrientation = PhotoViewImageOrientationLandscape;
+        self.imageScale = hScale;
+    }
+    
+    return CGRectMake(0, 0, width * self.imageScale, height * self.imageScale);
+}
+
+// 限制图片的frame，不能有图片空白
+- (CGRect)restrictTheMoveImageFrame
+{
+    CGRect frame = self.moveImageView.frame;
+    switch (self.imageOrientation)
+    {
+        case PhotoViewImageOrientationLandscape:
+            frame.origin.y = self.originFrame.origin.y;
+            if (-(frame.origin.x + frame.size.width < self.bounds.size.width))
+            {
+                frame.origin.x = -(self.originFrame.size.width - self.bounds.size.width);
+            }
+            else if (frame.origin.x > 0)
+            {
+                frame.origin.x = 0;
+            }
+            
+            break;
+            
+        case PhotoViewImageOrientationPortrait:
+            frame.origin.x = self.originFrame.origin.x;
+            if (frame.origin.y + frame.size.height < self.bounds.size.height)
+            {
+                frame.origin.y = -(self.originFrame.size.height - self.bounds.size.height);
+            }
+            else if (frame.origin.y > 0)
+            {
+                frame.origin.y = 0;
+            }
+            
+            break;
+            
+        default:
+            frame = self.originFrame;
+            break;
+    }
+    
+    return frame;
 }
 
 #pragma makr - GestureMoveMethod
@@ -188,6 +262,8 @@ static NSTimeInterval const kUIViewAnimationDuration = 0.1f;
             center.x += changeX;
             center.y += changeY;
             self.moveImageView.center = center;
+            
+            self.moveBeginFrame = [self restrictTheMoveImageFrame];
             
             location = newLocation;
         }

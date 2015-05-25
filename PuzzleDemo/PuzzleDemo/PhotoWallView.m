@@ -163,10 +163,8 @@
     if (self.currentPhotoItem && self.changePhotoItem)
     {
         NSString *currentImg = [self.currentPhotoItem.moveImage mutableCopy];
-        NSLog(@"%@", currentImg);
-        [self.currentPhotoItem phohoItemchangeImage:self.changePhotoItem.moveImage];
-        NSLog(@"%@", currentImg);
-        [self.changePhotoItem phohoItemchangeImage:currentImg];
+        [self.currentPhotoItem phohoItemChangeImage:self.changePhotoItem.moveImage];
+        [self.changePhotoItem phohoItemChangeImage:currentImg];
     }
     else
     {

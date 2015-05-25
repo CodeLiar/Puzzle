@@ -37,14 +37,12 @@
 {
     [super viewDidLoad];
     
-    
     self.view.backgroundColor = [UIColor blackColor];
     
     NSString *filePath;
     if (self.sceneCount == 3)
     {
         filePath = [[NSBundle mainBundle] pathForResource:@"PuzzleWall021" ofType:@"json"];
-
     }
     else
     {

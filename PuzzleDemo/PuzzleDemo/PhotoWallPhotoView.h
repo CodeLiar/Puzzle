@@ -23,7 +23,7 @@
 - (instancetype)initWithPointScales:(NSArray *)pointsScales scaleSize:(CGSize)scaleSize image:(NSString *)image;
 
 // 切换图片
-- (void)phohoItemchangeImage:(NSString *)image;
+- (void)phohoItemChangeImage:(NSString *)image;
 
 // 判断点是否在改PhotoItem中
 - (BOOL)isPointInThisPhotoItem:(CGPoint)point;
