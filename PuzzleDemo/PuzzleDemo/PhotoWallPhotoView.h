@@ -19,15 +19,18 @@
 
 
 @property (nonatomic, strong) NSString *moveImage;                      // 图片
+@property (nonatomic, strong) UIImage *thumbImage;
 @property (nonatomic, assign) id<PhotoWallPhotoViewDelegate> delegate;
 @property (nonatomic, assign) BOOL isSelected;
 
-- (instancetype)initWithPointScales:(NSArray *)pointsScales scaleSize:(CGSize)scaleSize image:(NSString *)image;
+- (instancetype)initWithPointScales:(NSArray *)pointsScales scaleSize:(CGSize)scaleSize image:(UIImage *)image;
 
 // 切换图片
-- (void)phohoItemChangeImage:(NSString *)image;
+- (void)phohoItemChangeImage:(UIImage *)image;
 
 // 判断点是否在改PhotoItem中
 - (BOOL)isPointInThisPhotoItem:(CGPoint)point;
+
+- (void)changeImageViewScale:(CGFloat)scale;
 
 @end

@@ -10,6 +10,8 @@
 
 @interface PhotoViewController : UIViewController
 
+@property (nonatomic, strong) NSMutableArray *photoArray;
+
 - (instancetype)initWithSourceFile:(NSString *)file count:(NSInteger)count;
 
 @end

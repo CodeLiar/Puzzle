@@ -11,4 +11,6 @@
 
 @interface RootViewController : UIViewController
 
+@property (nonatomic, strong) NSMutableArray *photoArray;
+
 @end

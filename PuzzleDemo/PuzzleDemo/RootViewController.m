@@ -102,6 +102,7 @@
 - (void)btnClick:(UIButton *)sender
 {
     PhotoViewController *vc = [[PhotoViewController alloc] initWithSourceFile:nil count:sender.tag];
+    vc.photoArray = self.photoArray;
     [self.navigationController pushViewController:vc animated:YES];
 }
 

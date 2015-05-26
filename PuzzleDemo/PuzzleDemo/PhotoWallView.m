@@ -31,6 +31,19 @@
 
 @implementation PhotoWallView
 
+- (instancetype)initWithFrame:(CGRect)frame jsonData:(NSDictionary *)jsonData photoArray:(NSMutableArray *)photoArray
+{
+    self = [super initWithFrame:frame];
+    if (self)
+    {
+        self.puzzleCount = photoArray.count;
+        self.jsonData = jsonData;
+        self.photoArray = photoArray;
+        [self setupView];
+    }
+    return self;
+}
+
 - (instancetype)initWithFrame:(CGRect)frame jsonData:(NSDictionary *)jsonData puzzleCount:(NSInteger)puzzleCount
 {
     self = [super initWithFrame:frame];
@@ -104,7 +117,7 @@
     {
         NSString *pointString = self.pointScalesArray[i];
         NSArray *pointScales = [pointString componentsSeparatedByString:@","];
-        PhotoWallPhotoView *photoItem = [[PhotoWallPhotoView alloc] initWithPointScales:pointScales scaleSize:self.frame.size image:self.demoImgArray[i]];
+        PhotoWallPhotoView *photoItem = [[PhotoWallPhotoView alloc] initWithPointScales:pointScales scaleSize:self.frame.size image:self.photoArray[i]];
         photoItem.delegate = self;
         [self addSubview:photoItem];
     }
@@ -192,14 +205,33 @@
 {
     if (self.currentPhotoItem && self.changePhotoItem && ![self.currentPhotoItem isEqual:self.changePhotoItem])
     {
-        NSString *currentImg = [self.currentPhotoItem.moveImage mutableCopy];
-        [self.currentPhotoItem phohoItemChangeImage:self.changePhotoItem.moveImage];
+        UIImage *currentImg = self.currentPhotoItem.thumbImage;
+        [self.currentPhotoItem phohoItemChangeImage:self.changePhotoItem.thumbImage];
         [self.changePhotoItem phohoItemChangeImage:currentImg];
     }
     else
     {
         
     }
+}
+
+- (void)changePhotoItemImage:(UIImage *)image
+{
+    [self.currentPhotoItem phohoItemChangeImage:image];
+}
+
+- (void)changePhotoItemScaleZoomIn:(BOOL)zoom
+{
+    CGFloat scale ;
+    if (zoom)
+    {
+        scale = 1.1f;
+    }
+    else
+    {
+        scale = 0.9f;
+    }
+    [self.currentPhotoItem changeImageViewScale:scale];
 }
 
 #pragma mark - PhotoWallPhotoViewDelegate
@@ -271,18 +303,21 @@
     self.currentPhotoItem = nil;
     self.currentPhotoItem = [self getPhotoItemWithGesture:tipGesture];
     
-    self.menuItemView.hidden = NO;
-    
-    CGRect frame = self.menuItemView.frame;
-    frame.origin.y = self.currentPhotoItem.frame.size.height + self.currentPhotoItem.frame.origin.y;
-    frame.origin.x = self.currentPhotoItem.frame.origin.x;
-    self.menuItemView.frame = frame;
+    if ([self.delegate respondsToSelector:@selector(photoWallViewTransferTapGesture:)])
+    {
+        [self.delegate photoWallViewTransferTapGesture:tipGesture];
+    }
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
     self.menuItemView.hidden = YES;
-    NSLog(@"-----");
+}
+
+
+- (BOOL)canBecomeFirstResponder
+{
+    return YES;
 }
 
 

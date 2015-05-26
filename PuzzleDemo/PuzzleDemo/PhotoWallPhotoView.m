@@ -34,11 +34,11 @@ typedef NS_ENUM(NSUInteger, PhotoViewImageOrientation) {
 
 @implementation PhotoWallPhotoView
 
-- (instancetype)initWithPointScales:(NSArray *)pointsScales scaleSize:(CGSize)scaleSize image:(NSString *)image
+- (instancetype)initWithPointScales:(NSArray *)pointsScales scaleSize:(CGSize)scaleSize image:(UIImage *)image
 {
     self.scaleWidth = scaleSize.width;
     self.scaleHeight = scaleSize.height;
-    self.moveImage = image;
+    self.thumbImage = image;
     self.clipsToBounds = YES;
     self.pointsArray = [self getPointValueArrayWithPointScales:pointsScales];
     
@@ -64,9 +64,9 @@ typedef NS_ENUM(NSUInteger, PhotoViewImageOrientation) {
 // 创建ImageView
 - (void)createMoveImageView
 {
-    self.moveImageView = [[UIImageView alloc] initWithFrame:[self getOriginFrameWithImage:self.moveImage]];
+    self.moveImageView = [[UIImageView alloc] initWithFrame:[self getOriginFrameWithImage:self.thumbImage]];
     self.originFrame = self.moveImageView.frame;
-    self.moveImageView.image = [UIImage imageNamed:self.moveImage];
+    self.moveImageView.image = self.thumbImage;
     self.moveImageView.userInteractionEnabled = YES;
     [self addSubview:self.moveImageView];
 }
@@ -164,20 +164,20 @@ typedef NS_ENUM(NSUInteger, PhotoViewImageOrientation) {
 }
 
 // 切换图片
-- (void)phohoItemChangeImage:(NSString *)image
+- (void)phohoItemChangeImage:(UIImage *)image
 {
-    self.moveImage = image;
+    self.thumbImage = image;
     self.moveImageView.transform = CGAffineTransformMake(1, 0, 0, 1, 0, 0);
     self.originFrame = [self getOriginFrameWithImage:image];
     self.moveBeginFrame = [self getOriginFrameWithImage:image];
-    self.moveImageView.image = [UIImage imageNamed:image];
-    [self resetImageFrame:self.originFrame];
+    self.moveImageView.image = _thumbImage;
+    self.moveImageView.frame = self.originFrame;
 }
 
 // 根据图片设置imageView的frame的size
-- (CGRect)getOriginFrameWithImage:(NSString *)imageName
+- (CGRect)getOriginFrameWithImage:(UIImage *)image
 {
-    UIImage *image = [UIImage imageNamed:imageName];
+//    UIImage *image = [UIImage imageNamed:imageName];
     CGFloat width = image.size.width;
     CGFloat height = image.size.height;
     
@@ -376,6 +376,12 @@ typedef NS_ENUM(NSUInteger, PhotoViewImageOrientation) {
         [self.delegate photoItemTapGesture:tapGesture];
     }
 }
+
+- (BOOL)canBecomeFirstResponder
+{
+    return YES;
+}
+
 
 
 @end
