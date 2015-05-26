@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>E2B51004-05F9-43C0-8515-E7D22BAEAFFB</string>
 	<key>IDESourceControlProjectName</key>
-	<string>project</string>
+	<string>PuzzleDemo</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>98E0A8095E024355717B661337674553C7F5CE19</key>
 		<string>https://github.com/dmjyishi/Puzzle.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>PuzzleDemo/PuzzleDemo.xcodeproj/project.xcworkspace</string>
+	<string>PuzzleDemo/PuzzleDemo.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>98E0A8095E024355717B661337674553C7F5CE19</key>
