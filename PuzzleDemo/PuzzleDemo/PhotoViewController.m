@@ -22,7 +22,6 @@
 
 @property (nonatomic, strong) ALAssetsLibrary *library;
 
-
 @end
 
 @implementation PhotoViewController
