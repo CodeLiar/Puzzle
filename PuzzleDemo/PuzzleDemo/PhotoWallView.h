@@ -28,11 +28,12 @@
 // 切换该模板数量
 - (void)changePuzzleCount:(NSInteger)puzzleCount;
 
-
 // MenuItem事件
 // 切换图片
 - (void)changePhotoItemImage:(UIImage *)image;
 // 放大或缩小图片
 - (void)changePhotoItemScaleZoomIn:(BOOL)zoom;
+// 更改PhotoItem的transform
+- (void)changePhotoItemTransform:(CGFloat)angle;
 
 @end

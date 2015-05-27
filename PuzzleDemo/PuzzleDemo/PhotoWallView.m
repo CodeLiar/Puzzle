@@ -77,8 +77,6 @@
     [self createAllPhotoItem];
     
     [self createCoverImageView];
-    
-    [self createMenuItemView];
 }
 
 - (void)resetView
@@ -209,10 +207,6 @@
         [self.currentPhotoItem phohoItemChangeImage:self.changePhotoItem.thumbImage];
         [self.changePhotoItem phohoItemChangeImage:currentImg];
     }
-    else
-    {
-        
-    }
 }
 
 - (void)changePhotoItemImage:(UIImage *)image
@@ -232,6 +226,11 @@
         scale = 0.9f;
     }
     [self.currentPhotoItem changeImageViewScale:scale];
+}
+
+- (void)changePhotoItemTransform:(CGFloat)angle
+{
+    [self.currentPhotoItem changeImageViewTransform:angle];
 }
 
 #pragma mark - PhotoWallPhotoViewDelegate

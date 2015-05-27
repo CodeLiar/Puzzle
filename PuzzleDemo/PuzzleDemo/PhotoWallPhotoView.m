@@ -181,6 +181,23 @@ typedef NS_ENUM(NSUInteger, PhotoViewImageOrientation) {
     CGFloat width = image.size.width;
     CGFloat height = image.size.height;
     
+    CGFloat scale = [self getBigScaleWithHeight:height width:width];
+    
+    return CGRectMake(0, 0, width * scale, height * scale);
+}
+
+// 旋转后根据ImageView设置新的frame
+- (CGRect)getTransformFrame
+{
+    CGFloat width = self.moveImageView.frame.size.width;
+    CGFloat height = self.moveImageView.frame.size.height;
+    CGFloat scale = [self getBigScaleWithHeight:height width:width];
+    return CGRectMake(0, 0, width*scale, height*scale);
+}
+
+// 获取最大
+- (CGFloat)getBigScaleWithHeight:(CGFloat)height width:(CGFloat)width
+{
     CGFloat wScale = self.bounds.size.width / width;
     CGFloat hScale = self.bounds.size.height / height;
     CGFloat scale = 0;
@@ -194,8 +211,7 @@ typedef NS_ENUM(NSUInteger, PhotoViewImageOrientation) {
         self.imageOrientation = PhotoViewImageOrientationLandscape;
         scale = hScale;
     }
-    
-    return CGRectMake(0, 0, width * scale, height * scale);
+    return scale;
 }
 
 // 限制图片的frame，不能有图片空白
@@ -238,6 +254,16 @@ typedef NS_ENUM(NSUInteger, PhotoViewImageOrientation) {
     }
     self.moveImageView.transform = transform;
 }
+
+- (void)changeImageViewTransform:(CGFloat)angle
+{
+    self.moveImageView.transform = CGAffineTransformRotate(self.moveImageView.transform, angle);
+    
+
+    self.moveImageView.frame = [self getTransformFrame];
+    NSLog(@"%@", NSStringFromCGRect(self.moveImageView.frame));
+}
+
 #pragma makr - GestureMoveMethod
 
 - (void)imageViewPanMethod:(UIPanGestureRecognizer *)panGesture

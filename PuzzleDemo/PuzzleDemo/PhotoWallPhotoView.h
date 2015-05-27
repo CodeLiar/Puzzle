@@ -33,4 +33,6 @@
 
 - (void)changeImageViewScale:(CGFloat)scale;
 
+- (void)changeImageViewTransform:(CGFloat)angle;
+
 @end

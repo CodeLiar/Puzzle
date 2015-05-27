@@ -90,8 +90,9 @@
     UIMenuItem *menuItem_1 = [[UIMenuItem alloc] initWithTitle:@"相册" action:@selector(item1Click)];//@selector()括号中为该按钮触发的方法，该方法必须在UIVIewContrller中进行声明，就是投向的view所绑定的viewController类中必须实现这个方法
     UIMenuItem *menuItem_2 = [[UIMenuItem alloc] initWithTitle:@"+" action:@selector(item2Click)];
     UIMenuItem *menuItem_3 = [[UIMenuItem alloc] initWithTitle:@"-" action:@selector(item3Click)];
+    UIMenuItem *menuitem_4 = [[UIMenuItem alloc] initWithTitle:@"旋转" action:@selector(item4Click)];
     
-    menuController.menuItems = [NSArray arrayWithObjects: menuItem_1, menuItem_2,menuItem_3,nil];
+    menuController.menuItems = [NSArray arrayWithObjects: menuItem_1,  menuItem_2, menuItem_3, menuitem_4,nil];
     [menuController setTargetRect:gesture.view.frame inView:gesture.view.superview];
     [menuController setMenuVisible:YES animated:YES];
 }
@@ -114,6 +115,11 @@
 - (void)item3Click
 {
     [self.photoWallView changePhotoItemScaleZoomIn:NO];
+}
+
+- (void)item4Click
+{
+    [self.photoWallView changePhotoItemTransform:M_PI_2];
 }
 
 - (void)buttonClick:(UIButton *)btn
