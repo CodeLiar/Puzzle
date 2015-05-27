@@ -69,6 +69,18 @@
 //        [self.view addSubview:btn];
         [btn addTarget:self action:@selector(buttonClick:) forControlEvents:UIControlEventTouchUpInside];
     }
+    
+    UIButton *saveBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, kUIScreenHeight - 100, 100, 40)];
+    saveBtn.backgroundColor = [UIColor whiteColor];
+    [saveBtn setTitle:@"保存" forState:UIControlStateNormal];
+    [saveBtn setTitleColor:[UIColor greenColor] forState:UIControlStateNormal];
+    [self.view addSubview:saveBtn];
+    [saveBtn addTarget:self action:@selector(saveImage) forControlEvents:UIControlEventTouchUpInside];
+}
+
+- (void)saveImage
+{
+    UIImageWriteToSavedPhotosAlbum([self imageFromView:self.photoWallView], nil, nil, nil);
 }
 
 - (void)photoWallViewTransferTapGesture:(UIGestureRecognizer *)gesture
@@ -137,5 +149,34 @@
 {
     [picker dismissViewControllerAnimated:YES completion:nil];
 }
+
+#pragma makr - Screen Shot
+-(UIImage*)imageFromView:(UIView *)theView
+{
+    UIGraphicsBeginImageContextWithOptions(theView.frame.size, NO, [UIScreen mainScreen].scale);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextSaveGState(context);
+    UIRectClip(theView.bounds);
+    [theView.layer renderInContext:context];
+    UIImage *theImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return  theImage;
+}
+
+- (void)writeImageToSavedPhotosAlbum:(UIImage *)image
+{
+    [self.library writeImageToSavedPhotosAlbum:[image CGImage] orientation:ALAssetOrientationUp completionBlock:^(NSURL *assetURL, NSError *error) {
+        if (error) {
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error Saving"
+                                                            message:[error localizedDescription]
+                                                           delegate:nil
+                                                  cancelButtonTitle:@"Ok"
+                                                  otherButtonTitles: nil];
+            [alert show];
+        }
+    }];
+}
+
+
 
 @end
