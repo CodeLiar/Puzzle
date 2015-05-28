@@ -22,13 +22,13 @@ typedef NS_ENUM(NSUInteger, PhotoViewImageOrientation) {
 @property (nonatomic, assign) CGFloat scaleWidth;
 @property (nonatomic, strong) UIBezierPath *bezierPath;
 
-@property (nonatomic, strong) UIImageView *moveImageView;           // 移动的图片
+@property (nonatomic, strong) UIImageView *moveImageView;                       // 移动的图片
 
 @property (nonatomic, assign) CGRect moveBeginFrame;
 @property (nonatomic, assign) CGRect originFrame;
 
-@property (nonatomic, assign) CGFloat imageScale;               // 图片存放比例
-@property (nonatomic, assign) PhotoViewImageOrientation imageOrientation;
+@property (nonatomic, assign) CGFloat imageScale;                               // 图片存放比例
+@property (nonatomic, assign) PhotoViewImageOrientation imageOrientation;       // 图片延展方向（暂时未用到）
 
 @end
 
@@ -176,7 +176,6 @@ typedef NS_ENUM(NSUInteger, PhotoViewImageOrientation) {
     self.originFrame = self.moveImageView.frame;
     self.moveBeginFrame = self.moveImageView.frame;
     self.moveImageView.image = _thumbImage;
-    
 }
 
 // 根据图片设置imageView的frame的size
@@ -410,7 +409,5 @@ typedef NS_ENUM(NSUInteger, PhotoViewImageOrientation) {
 {
     return YES;
 }
-
-
 
 @end
