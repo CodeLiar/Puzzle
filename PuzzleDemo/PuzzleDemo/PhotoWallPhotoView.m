@@ -65,6 +65,7 @@ typedef NS_ENUM(NSUInteger, PhotoViewImageOrientation) {
 - (void)createMoveImageView
 {
     self.moveImageView = [[UIImageView alloc] initWithFrame:[self getOriginFrameWithImage:self.thumbImage]];
+    self.moveImageView.center = CGPointMake(self.bounds.size.width / 2.0f, self.bounds.size.height / 2.0f);
     self.originFrame = self.moveImageView.frame;
     self.moveImageView.image = self.thumbImage;
     self.moveImageView.userInteractionEnabled = YES;
@@ -168,10 +169,14 @@ typedef NS_ENUM(NSUInteger, PhotoViewImageOrientation) {
 {
     self.thumbImage = image;
     self.moveImageView.transform = CGAffineTransformMake(1, 0, 0, 1, 0, 0);
-    self.originFrame = [self getOriginFrameWithImage:image];
-    self.moveBeginFrame = [self getOriginFrameWithImage:image];
+    
+    self.moveImageView.frame = [self getOriginFrameWithImage:image];
+    self.moveImageView.center = CGPointMake(self.bounds.size.width / 2.0f, self.bounds.size.height / 2.0f);
+    
+    self.originFrame = self.moveImageView.frame;
+    self.moveBeginFrame = self.moveImageView.frame;
     self.moveImageView.image = _thumbImage;
-    self.moveImageView.frame = self.originFrame;
+    
 }
 
 // 根据图片设置imageView的frame的size
@@ -258,10 +263,8 @@ typedef NS_ENUM(NSUInteger, PhotoViewImageOrientation) {
 - (void)changeImageViewTransform:(CGFloat)angle
 {
     self.moveImageView.transform = CGAffineTransformRotate(self.moveImageView.transform, angle);
-    
-
     self.moveImageView.frame = [self getTransformFrame];
-    NSLog(@"%@", NSStringFromCGRect(self.moveImageView.frame));
+    self.moveImageView.center= CGPointMake(self.bounds.size.width / 2.0f, self.bounds.size.height / 2.0f);
 }
 
 #pragma makr - GestureMoveMethod
