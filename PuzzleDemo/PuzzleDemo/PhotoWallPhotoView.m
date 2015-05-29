@@ -247,16 +247,15 @@ typedef NS_ENUM(NSUInteger, PhotoViewImageOrientation) {
 // 转换图片的scale
 - (void)changeImageViewScale:(CGFloat)scale
 {
-    CGAffineTransform transform = CGAffineTransformScale(self.moveImageView.transform, scale, scale);
-    if (transform.a < 1)
-    {
-        transform = CGAffineTransformMake(1, 0, 0, 1, 0, 0);
-    }
-    if (transform.a > 3)
-    {
-        transform = CGAffineTransformMake(3, 0, 0, 3, 0, 0);
-    }
+    CGAffineTransform currentTransform = self.moveImageView.transform;
+    CGAffineTransform transform = CGAffineTransformScale(currentTransform, scale, scale);
     self.moveImageView.transform = transform;
+
+    CGRect frame = self.moveImageView.frame;
+    if (frame.size.width / self.originFrame.size.width >3 || frame.size.width / self.originFrame.size.width < 1)
+    {
+        self.moveImageView.transform = currentTransform;
+    }
 }
 
 - (void)changeImageViewTransform:(CGFloat)angle
@@ -264,6 +263,7 @@ typedef NS_ENUM(NSUInteger, PhotoViewImageOrientation) {
     self.moveImageView.transform = CGAffineTransformRotate(self.moveImageView.transform, angle);
     self.moveImageView.frame = [self getTransformFrame];
     self.moveImageView.center= CGPointMake(self.bounds.size.width / 2.0f, self.bounds.size.height / 2.0f);
+    self.originFrame = self.moveImageView.frame;
 }
 
 #pragma makr - GestureMoveMethod
