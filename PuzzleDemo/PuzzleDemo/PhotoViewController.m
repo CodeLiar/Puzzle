@@ -60,6 +60,7 @@
     [self.view addSubview:photoWallView];
     self.photoWallView = photoWallView;
     
+    
     self.library = [[ALAssetsLibrary alloc] init];
     
     for (int i=0; i<self.sceneCount; i++) {
@@ -76,6 +77,21 @@
     [saveBtn setTitleColor:[UIColor greenColor] forState:UIControlStateNormal];
     [self.view addSubview:saveBtn];
     [saveBtn addTarget:self action:@selector(saveImage) forControlEvents:UIControlEventTouchUpInside];
+    
+    UIButton *scaleBtn = [[UIButton alloc] initWithFrame:CGRectMake(200, kUIScreenHeight - 100, 100, 40)];
+    scaleBtn.backgroundColor = [UIColor whiteColor];
+    [scaleBtn setTitle:@"Scale" forState:UIControlStateNormal];
+    [scaleBtn setTitleColor:[UIColor greenColor] forState:UIControlStateNormal];
+    [self.view addSubview:scaleBtn];
+    [scaleBtn addTarget:self action:@selector(scaleBtnClick) forControlEvents:UIControlEventTouchUpInside];
+    
+}
+
+- (void)scaleBtnClick
+{
+    [UIView animateWithDuration:5.0f animations:^{
+        self.photoWallView.transform = CGAffineTransformScale(self.photoWallView.transform, 0.5, 0.5);
+    }];
 }
 
 - (void)saveImage
